@@ -15,7 +15,7 @@ private:
 	int const			execgrade;
 	Form();
 public:
-	Form(std::string const &name, int const &signgrade, int const execgrade);
+	Form(std::string const &name, int signgrade, int const execgrade);
 	virtual ~Form();
 	Form(Form const &other);
 	Form &operator=(Form const &other);

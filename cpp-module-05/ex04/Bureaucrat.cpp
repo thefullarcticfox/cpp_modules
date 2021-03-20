@@ -4,7 +4,7 @@ Bureaucrat::Bureaucrat()
 {
 }
 
-Bureaucrat::Bureaucrat(std::string const &name, int const &grade) :
+Bureaucrat::Bureaucrat(std::string const &name, int grade) :
 	name(name), grade(grade)
 {
 	if (this->grade < 1)

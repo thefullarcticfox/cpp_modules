@@ -6,7 +6,7 @@ Span::Span()
 	this->numbers.reserve(0);
 }
 
-Span::Span(unsigned int const &n)
+Span::Span(unsigned int n)
 {
 	this->_size = n;
 	this->numbers.reserve(n);
@@ -28,7 +28,7 @@ Span			&Span::operator=(Span const &other)
 	return (*this);
 }
 
-void			Span::addNumber(int const &num)
+void			Span::addNumber(int num)
 {
 	if (this->_size == this->numbers.size())
 		throw (Span::NotEnoughSpaceException());

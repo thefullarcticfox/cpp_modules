@@ -12,12 +12,12 @@ private:
 	size_t				_size;
 	Span();
 public:
-	Span(unsigned int const &n);
+	Span(unsigned int n);
 	~Span();
 	Span(Span const &other);
 	Span &operator=(Span const &other);
 
-	void				addNumber(int const &num);
+	void				addNumber(int num);
 	template<typename Iter>
 	void				addNumberRange(Iter first, Iter last)
 	{

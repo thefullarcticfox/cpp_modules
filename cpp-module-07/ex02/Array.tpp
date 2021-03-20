@@ -17,7 +17,7 @@ public:
 		this->_size = 0;
 	}
 
-	Array(unsigned int const &n)
+	Array(unsigned int n)
 	{
 		this->_size = n;
 		this->array = new T[this->_size];
@@ -52,7 +52,7 @@ public:
 		return (*this);
 	}
 
-	T				&operator[](unsigned int const &index)
+	T				&operator[](unsigned int index)
 	{
 		std::stringstream	errmsg;
 

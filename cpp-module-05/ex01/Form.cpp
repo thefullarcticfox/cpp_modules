@@ -5,7 +5,7 @@ Form::Form() : signgrade(1), execgrade(1)
 	this->_issigned = false;
 }
 
-Form::Form(std::string const &name, int const &signgrade, int const execgrade) :
+Form::Form(std::string const &name, int signgrade, int const execgrade) :
 	name(name), signgrade(signgrade), execgrade(execgrade)
 {
 	if (this->signgrade < 1 || this->execgrade < 1)
