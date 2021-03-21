@@ -4,9 +4,9 @@
 #include <cstdlib>
 #include "Base.hpp"
 
-Base	*generate(void)
+Base*	generate(void)
 {
-	Base	*p = NULL;
+	Base*	p = NULL;
 	int		i = std::rand() % 3;
 
 	if (i == 0)
@@ -27,7 +27,7 @@ Base	*generate(void)
 	return (p);
 }
 
-void	identify_from_pointer(Base *p)
+void	identify_from_pointer(Base* p)
 {
 	if (dynamic_cast<A*>(p))
 		std::cout << "A" << std::endl;
@@ -40,28 +40,28 @@ void	identify_from_pointer(Base *p)
 
 // easy identify_from_reference implementation
 /*
-void	identify_from_reference(Base &p)
+void	identify_from_reference(Base& p)
 {
 	identify_from_pointer(&p);
 }
 */
 
 // harder identify_from_reference implementation
-void	identify_from_reference(Base &p)
+void	identify_from_reference(Base& p)
 {
 	try
 	{
 		A		a = dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
 	}
-	catch (std::exception const &bc)
+	catch (const std::exception& bc)
 	{
 		try
 		{
 			B	b = dynamic_cast<B&>(p);
 			std::cout << "B" << std::endl;
 		}
-		catch (std::exception const &bc)
+		catch (const std::exception& bc)
 		{
 			C	c = dynamic_cast<C&>(p);
 			std::cout << "C" << std::endl;
@@ -71,7 +71,7 @@ void	identify_from_reference(Base &p)
 
 int		main(void)
 {
-	Base	*base = NULL;
+	Base*	base = NULL;
 	int		i = -1;
 
 	std::srand(std::time(NULL));
@@ -88,7 +88,7 @@ int		main(void)
 			delete (base);
 		}
 	}
-	catch (std::exception const &e)
+	catch (const std::exception& e)
 	{
 		std::cout << e.what() << " at test " << i << std::endl;
 	}

@@ -4,9 +4,9 @@
 #include <cstdlib>
 #include "Data.hpp"
 
-void	*serialize(void)
+void*	serialize(void)
 {
-	char			*data = new char[sizeof(std::string) * 2 + sizeof(int)];
+	char*			data = new char[sizeof(std::string) * 2 + sizeof(int)];
 	std::string*	s1 = reinterpret_cast<std::string*>(data);
 	std::string*	s2 = reinterpret_cast<std::string*>(data + sizeof(std::string) + sizeof(int));
 	int*			n = reinterpret_cast<int*>(data + sizeof(std::string));
@@ -33,10 +33,10 @@ void	*serialize(void)
 	return (reinterpret_cast<void*>(data));
 }
 
-Data	*deserialize(void *raw)
+Data*	deserialize(void* raw)
 {
-	char	*rawbytes = reinterpret_cast<char*>(raw);
-	Data	*data = new Data;
+	char*	rawbytes = reinterpret_cast<char*>(raw);
+	Data*	data = new Data;
 
 	data->s1 = *(reinterpret_cast<std::string*>(rawbytes));
 	data->n = *(reinterpret_cast<int*>(rawbytes + sizeof(std::string)));
@@ -46,8 +46,8 @@ Data	*deserialize(void *raw)
 
 int		main(void)
 {
-	void	*rawptr;
-	Data	*datastrptr;
+	void*	rawptr;
+	Data*	datastrptr;
 
 	std::srand(std::time(NULL));
 
@@ -60,7 +60,7 @@ int		main(void)
 	std::cout << "n:\t" << datastrptr->n << std::endl;
 	std::cout << "s2:\t" << datastrptr->s2 << std::endl;
 
-	char	*rawbytes = reinterpret_cast<char*>(rawptr);
+	char*	rawbytes = reinterpret_cast<char*>(rawptr);
 	typedef	std::string		string;
 	//	^ silencing vscode error: invalid destructor name for type string
 	reinterpret_cast<std::string*>(rawbytes)->~string();

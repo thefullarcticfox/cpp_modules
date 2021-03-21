@@ -2,7 +2,7 @@
 
 Converter::Converter() {}
 
-int			Converter::isFloat(std::string const &str)
+int			Converter::isFloat(const std::string& str)
 {
 	std::string::const_iterator	it = str.begin();
 
@@ -54,7 +54,7 @@ int			Converter::isFloat(std::string const &str)
 	return (0);
 }
 
-Converter::Converter(std::string const &value)
+Converter::Converter(const std::string& value)
 {
 	if (value.length() == 0 || (value.length() == 1 && !isdigit(value[0])))
 		this->actualtype = 1;
@@ -93,7 +93,7 @@ Converter::Converter(std::string const &value)
 		else
 			this->precision = 0;
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		(void)e;
 		this->actualtype = 0;
@@ -104,12 +104,12 @@ Converter::~Converter()
 {
 }
 
-Converter::Converter(Converter const &other)
+Converter::Converter(const Converter& other)
 {
 	*this = other;
 }
 
-Converter &Converter::operator=(Converter const &other)
+Converter&	Converter::operator=(const Converter& other)
 {
 	this->actualtype = other.actualtype;
 	this->charvalue = other.charvalue;
@@ -217,7 +217,7 @@ int				Converter::getprecision() const
 	return (this->precision);
 }
 
-std::ostream		&operator<<(std::ostream &os, Converter const &val)
+std::ostream&	operator<<(std::ostream& os, const Converter& val)
 {
 	char	tmp;
 
@@ -228,7 +228,7 @@ std::ostream		&operator<<(std::ostream &os, Converter const &val)
 		tmp = val.getChar();
 		os << "\'" << tmp << "\'" << std::endl;
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		os << e.what() << std::endl;
 	}
@@ -237,7 +237,7 @@ std::ostream		&operator<<(std::ostream &os, Converter const &val)
 	{
 		os << val.getInt() << std::endl;
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		os << e.what() << std::endl;
 	}
@@ -254,7 +254,7 @@ std::ostream		&operator<<(std::ostream &os, Converter const &val)
 		os << val.getFloat();
 		os << "f" << std::endl;
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		os << e.what() << std::endl;
 	}
@@ -264,20 +264,20 @@ std::ostream		&operator<<(std::ostream &os, Converter const &val)
 		os << val.getDouble();
 		os << std::endl;
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		os << e.what() << std::endl;
 	}
 	return (os);
 }
 
-const char	*Converter::ImpossibleException::what()
+const char*	Converter::ImpossibleException::what()
 	const throw()
 {
 	return ("impossible");
 }
 
-const char	*Converter::NonDisplayableException::what()
+const char*	Converter::NonDisplayableException::what()
 	const throw()
 {
 	return ("Non displayable");
@@ -288,13 +288,13 @@ Converter::ImpossibleException::ImpossibleException() {}
 Converter::ImpossibleException::~ImpossibleException() throw() {}
 
 Converter::ImpossibleException::ImpossibleException(
-	Converter::ImpossibleException const &other)
+	const Converter::ImpossibleException& other)
 {
 	*this = other;
 }
 
-Converter::ImpossibleException &Converter::ImpossibleException::operator=(
-	Converter::ImpossibleException const &other)
+Converter::ImpossibleException&	Converter::ImpossibleException::operator=(
+	const Converter::ImpossibleException& other)
 {
 	(void)other;
 	return (*this);
@@ -305,19 +305,19 @@ Converter::NonDisplayableException::NonDisplayableException() {}
 Converter::NonDisplayableException::~NonDisplayableException() throw() {}
 
 Converter::NonDisplayableException::NonDisplayableException(
-	Converter::NonDisplayableException const &other)
+	const Converter::NonDisplayableException& other)
 {
 	*this = other;
 }
 
-Converter::NonDisplayableException &Converter::NonDisplayableException::operator=(
-	Converter::NonDisplayableException const &other)
+Converter::NonDisplayableException&	Converter::NonDisplayableException::operator=(
+	const Converter::NonDisplayableException& other)
 {
 	(void)other;
 	return (*this);
 }
 
-int					Converter::ft_stoi(std::string const &str)
+int					Converter::ft_stoi(const std::string& str)
 {
 	std::istringstream	iss(str);
 	int					val = 0;
@@ -327,7 +327,7 @@ int					Converter::ft_stoi(std::string const &str)
 	return (val);
 }
 
-float				Converter::ft_stof(std::string const &str)
+float				Converter::ft_stof(const std::string& str)
 {
 	std::stringstream	iss;
 	if (str.size() > 0 && str.at(str.size() - 1) == 'f')
@@ -341,7 +341,7 @@ float				Converter::ft_stof(std::string const &str)
 	return (val);
 }
 
-double				Converter::ft_stod(std::string const &str)
+double				Converter::ft_stod(const std::string& str)
 {
 	std::istringstream	iss(str);
 	double				val = 0;

@@ -21,10 +21,10 @@ private:
 	int				precision;
 	Converter();
 public:
-	Converter(std::string const &value);
+	Converter(const std::string& value);
 	virtual ~Converter();
-	Converter(Converter const &other);
-	Converter &operator=(Converter const &other);
+	Converter(const Converter& other);
+	Converter&		operator=(const Converter& other);
 
 	std::string		getactualtype(void) const;
 	char			getChar(void) const;
@@ -36,29 +36,29 @@ public:
 	public:
 		ImpossibleException();
 		virtual ~ImpossibleException() throw();
-		ImpossibleException(ImpossibleException const &other);
-		ImpossibleException &operator=(ImpossibleException const &other);
+		ImpossibleException(const ImpossibleException& other);
+		ImpossibleException&		operator=(const ImpossibleException& other);
 
-		virtual const char	*what() const throw();
+		virtual const char*			what() const throw();
 	};
 	class NonDisplayableException : public std::exception {
 	public:
 		NonDisplayableException();
 		virtual ~NonDisplayableException() throw();
-		NonDisplayableException(NonDisplayableException const &other);
-		NonDisplayableException &operator=(NonDisplayableException const &other);
+		NonDisplayableException(const NonDisplayableException& other);
+		NonDisplayableException&	operator=(const NonDisplayableException& other);
 
-		virtual const char	*what() const throw();
+		virtual const char*			what() const throw();
 	};
 
 	int				getprecision() const;
 
-	static int		isFloat(std::string const &str);
-	static int		ft_stoi(std::string const &str);
-	static float	ft_stof(std::string const &str);
-	static double	ft_stod(std::string const &str);
+	static int		isFloat(const std::string& str);
+	static int		ft_stoi(const std::string& str);
+	static float	ft_stof(const std::string& str);
+	static double	ft_stod(const std::string& str);
 };
 
-std::ostream		&operator<<(std::ostream &os, Converter const &val);
+std::ostream&		operator<<(std::ostream& os, const Converter& val);
 
 #endif
