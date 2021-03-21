@@ -36,7 +36,7 @@ int		main(void)
 	{
 		sp2.addNumber(0);
 	}
-	catch (std::exception const &e)
+	catch (const std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -47,7 +47,7 @@ int		main(void)
 	{
 		std::cout << sp3.shortestSpan() << std::endl;
 	}
-	catch (std::exception const &e)
+	catch (const std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -55,7 +55,7 @@ int		main(void)
 	{
 		std::cout << sp3.longestSpan() << std::endl;
 	}
-	catch (std::exception const &e)
+	catch (const std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

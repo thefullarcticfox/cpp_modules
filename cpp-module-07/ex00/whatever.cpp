@@ -7,24 +7,24 @@ private:
 public:
 	Awesome(int n) : _n(n) {}
 
-	bool		operator==(Awesome const &rhs) { return (this->_n == rhs._n); }
-	bool		operator!=(Awesome const &rhs) { return (this->_n != rhs._n); }
-	bool		operator>(Awesome const &rhs) { return (this->_n > rhs._n); }
-	bool		operator<(Awesome const &rhs) { return (this->_n < rhs._n); }
-	bool		operator>=(Awesome const &rhs) { return (this->_n >= rhs._n); }
-	bool		operator<=(Awesome const &rhs) { return (this->_n <= rhs._n); }
+	bool		operator==(const Awesome& rhs) { return (this->_n == rhs._n); }
+	bool		operator!=(const Awesome& rhs) { return (this->_n != rhs._n); }
+	bool		operator>(const Awesome& rhs) { return (this->_n > rhs._n); }
+	bool		operator<(const Awesome& rhs) { return (this->_n < rhs._n); }
+	bool		operator>=(const Awesome& rhs) { return (this->_n >= rhs._n); }
+	bool		operator<=(const Awesome& rhs) { return (this->_n <= rhs._n); }
 
-	int const	&getInt(void) const { return (this->_n); }
+	int			getInt(void) const { return (this->_n); }
 };
 
-std::ostream	&operator<<(std::ostream &os, Awesome const &val)
+std::ostream&	operator<<(std::ostream& os, const Awesome& val)
 {
 	os << val.getInt();
 	return (os);
 }
 
 template <class T>
-void	swap(T &a, T &b)
+void	swap(T& a, T& b)
 {
 	T	t = a;
 	a = b;
@@ -32,7 +32,7 @@ void	swap(T &a, T &b)
 }
 
 template <class T>
-T		&min(T &a, T &b)
+T&		min(T& a, T& b)
 {
 	if (a < b)
 		return (a);
@@ -40,7 +40,7 @@ T		&min(T &a, T &b)
 }
 
 template <class T>
-T		&max(T &a, T &b)
+T&		max(T& a, T& b)
 {
 	if (a > b)
 		return (a);

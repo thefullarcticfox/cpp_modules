@@ -16,12 +16,12 @@ Span::~Span()
 {
 }
 
-Span::Span(Span const &other)
+Span::Span(const Span& other)
 {
 	*this = other;
 }
 
-Span			&Span::operator=(Span const &other)
+Span&			Span::operator=(const Span& other)
 {
 	this->_size = other._size;
 	this->numbers = other.numbers;
@@ -62,17 +62,17 @@ unsigned int	Span::longestSpan(void)
 	return (static_cast<unsigned int>(std::abs(max - min)));
 }
 
-const char		*Span::NoSpanToFindException::what() const throw()
+const char*		Span::NoSpanToFindException::what() const throw()
 {
 	return ("No span to find (vector is too short)");
 }
 
-const char		*Span::NotEnoughSpaceException::what() const throw()
+const char*		Span::NotEnoughSpaceException::what() const throw()
 {
 	return ("Can't store numbers (vector is full)");
 }
 
-const char		*Span::BadIteratorRangeException::what() const throw()
+const char*		Span::BadIteratorRangeException::what() const throw()
 {
 	return ("Bad iterator range");
 }
@@ -82,13 +82,13 @@ Span::NoSpanToFindException::NoSpanToFindException() {}
 Span::NoSpanToFindException::~NoSpanToFindException() throw() {}
 
 Span::NoSpanToFindException::NoSpanToFindException(
-	Span::NoSpanToFindException const &other)
+	const Span::NoSpanToFindException& other)
 {
 	*this = other;
 }
 
-Span::NoSpanToFindException &Span::NoSpanToFindException::operator=(
-	Span::NoSpanToFindException const &other)
+Span::NoSpanToFindException&	Span::NoSpanToFindException::operator=(
+	const Span::NoSpanToFindException& other)
 {
 	(void)other;
 	return (*this);
@@ -99,13 +99,13 @@ Span::NotEnoughSpaceException::NotEnoughSpaceException() {}
 Span::NotEnoughSpaceException::~NotEnoughSpaceException() throw() {}
 
 Span::NotEnoughSpaceException::NotEnoughSpaceException(
-	Span::NotEnoughSpaceException const &other)
+	const Span::NotEnoughSpaceException& other)
 {
 	*this = other;
 }
 
-Span::NotEnoughSpaceException &Span::NotEnoughSpaceException::operator=(
-	Span::NotEnoughSpaceException const &other)
+Span::NotEnoughSpaceException&	Span::NotEnoughSpaceException::operator=(
+	const Span::NotEnoughSpaceException& other)
 {
 	(void)other;
 	return (*this);
@@ -116,13 +116,13 @@ Span::BadIteratorRangeException::BadIteratorRangeException() {}
 Span::BadIteratorRangeException::~BadIteratorRangeException() throw() {}
 
 Span::BadIteratorRangeException::BadIteratorRangeException(
-	Span::BadIteratorRangeException const &other)
+	const Span::BadIteratorRangeException& other)
 {
 	*this = other;
 }
 
-Span::BadIteratorRangeException &Span::BadIteratorRangeException::operator=(
-	Span::BadIteratorRangeException const &other)
+Span::BadIteratorRangeException&	Span::BadIteratorRangeException::operator=(
+	const Span::BadIteratorRangeException& other)
 {
 	(void)other;
 	return (*this);

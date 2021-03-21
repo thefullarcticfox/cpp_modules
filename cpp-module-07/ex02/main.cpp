@@ -21,7 +21,7 @@ int		main(void)
 			std::cout << a[i++] << " ";
 		}
 	}
-	catch (std::exception const &e)
+	catch (const std::exception& e)
 	{
 		std::cout << std::endl << e.what() << std::endl;
 		try
@@ -29,7 +29,7 @@ int		main(void)
 			std::cout << "b (empty array check)" << std::endl;
 			(*b)[0] = 0;
 		}
-		catch (std::exception const &e)
+		catch (const std::exception& e)
 		{
 			std::cout << e.what() << std::endl;
 		}

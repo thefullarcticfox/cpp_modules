@@ -5,7 +5,7 @@
 
 // my tests
 template <typename T>
-void			iter(T *array, size_t size, void (*f)(T const &arg))
+void			iter(T* array, size_t size, void (*f)(const T& arg))
 {
 	size_t	i = 0;
 
@@ -14,7 +14,7 @@ void			iter(T *array, size_t size, void (*f)(T const &arg))
 }
 
 template<typename T>
-void			printelement(T const &element)
+void			printelement(const T& element)
 {
 	std::cout << element << " ";
 }
@@ -29,14 +29,14 @@ public:
 	int		get(void) const { return (this->_n); }
 };
 
-std::ostream	&operator<<(std::ostream &o, Awesome const &rhs)
+std::ostream&	operator<<(std::ostream& o, const Awesome& rhs)
 {
 	o << rhs.get();
 	return (o);
 }
 
 template<typename T>
-void			print(T const &x)
+void			print(const T& x)
 {
 	std::cout << x << std::endl;
 	return ;

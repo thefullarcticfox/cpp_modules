@@ -8,7 +8,7 @@
 template <typename T>
 class Array {
 private:
-	T				*array;
+	T*				array;
 	unsigned int	_size;
 public:
 	Array()
@@ -28,14 +28,14 @@ public:
 		delete[] (array);
 	}
 
-	Array(Array const &other)
+	Array(const Array& other)
 	{
 		this->array = new T[0];
 		this->_size = 0;
 		*this = other;
 	}
 
-	Array			&operator=(Array const &other)
+	Array&			operator=(const Array& other)
 	{
 		unsigned int	i = 0;
 
@@ -52,7 +52,7 @@ public:
 		return (*this);
 	}
 
-	T				&operator[](unsigned int index)
+	T&				operator[](unsigned int index)
 	{
 		std::stringstream	errmsg;
 

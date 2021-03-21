@@ -14,8 +14,8 @@ private:
 public:
 	Span(unsigned int n);
 	~Span();
-	Span(Span const &other);
-	Span &operator=(Span const &other);
+	Span(const Span& other);
+	Span&	operator=(const Span& other);
 
 	void				addNumber(int num);
 	template<typename Iter>
@@ -37,28 +37,28 @@ public:
 	public:
 		NoSpanToFindException();
 		virtual ~NoSpanToFindException() throw();
-		NoSpanToFindException(NoSpanToFindException const &other);
-		NoSpanToFindException	&operator=(NoSpanToFindException const &other);
+		NoSpanToFindException(const NoSpanToFindException& other);
+		NoSpanToFindException&	operator=(const NoSpanToFindException& other);
 
-		virtual const char		*what() const throw();
+		virtual const char*		what() const throw();
 	};
 	class NotEnoughSpaceException : public std::exception {
 	public:
 		NotEnoughSpaceException();
 		virtual ~NotEnoughSpaceException() throw();
-		NotEnoughSpaceException(NotEnoughSpaceException const &other);
-		NotEnoughSpaceException	&operator=(NotEnoughSpaceException const &other);
+		NotEnoughSpaceException(const NotEnoughSpaceException& other);
+		NotEnoughSpaceException&	operator=(const NotEnoughSpaceException& other);
 
-		virtual const char		*what() const throw();
+		virtual const char*		what() const throw();
 	};
 	class BadIteratorRangeException : public std::exception {
 	public:
 		BadIteratorRangeException();
 		virtual ~BadIteratorRangeException() throw();
-		BadIteratorRangeException(BadIteratorRangeException const &other);
-		BadIteratorRangeException	&operator=(BadIteratorRangeException const &other);
+		BadIteratorRangeException(const BadIteratorRangeException& other);
+		BadIteratorRangeException&	operator=(const BadIteratorRangeException& other);
 
-		virtual const char		*what() const throw();
+		virtual const char*		what() const throw();
 	};
 };
 

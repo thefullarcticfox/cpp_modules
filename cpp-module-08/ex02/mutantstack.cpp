@@ -14,13 +14,13 @@ MutantStack<T>::~MutantStack()
 }
 
 template<class T>
-MutantStack<T>::MutantStack(MutantStack<T> const &other) : std::stack<T>()
+MutantStack<T>::MutantStack(const MutantStack<T>& other) : std::stack<T>()
 {
 	*this = other;
 }
 
 template<class T>
-MutantStack<T>		&MutantStack<T>::operator=(MutantStack<T> const &other)
+MutantStack<T>		&MutantStack<T>::operator=(const MutantStack<T>& other)
 {
 	this->c = other.c;
 	return (*this);
