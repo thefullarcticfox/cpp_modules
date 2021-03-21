@@ -11,17 +11,17 @@ class NinjaTrap : public ClapTrap {
 private:
 	NinjaTrap();
 public:
-	NinjaTrap(std::string const &name);
+	NinjaTrap(const std::string& name);
 	virtual	~NinjaTrap();
-	NinjaTrap(NinjaTrap const &other);
-	NinjaTrap &operator=(NinjaTrap const &other);
+	NinjaTrap(const NinjaTrap& other);
+	NinjaTrap&	operator=(const NinjaTrap& other);
 
-	void			rangedAttack(std::string const &target);
-	void			meleeAttack(std::string const &target);
-	void			ninjaShoebox(ClapTrap &trap);
-	void			ninjaShoebox(FragTrap &trap);
-	void			ninjaShoebox(ScavTrap &trap);
-	void			ninjaShoebox(NinjaTrap &trap);
+	void		rangedAttack(const std::string& target);
+	void		meleeAttack(const std::string& target);
+	void		ninjaShoebox(const ClapTrap& trap);
+	void		ninjaShoebox(const FragTrap& trap);
+	void		ninjaShoebox(const ScavTrap& trap);
+	void		ninjaShoebox(const NinjaTrap& trap);
 };
 
 #endif

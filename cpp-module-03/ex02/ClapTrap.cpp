@@ -4,7 +4,7 @@ ClapTrap::ClapTrap()
 {
 }
 
-ClapTrap::ClapTrap(std::string const &name) : name(name)
+ClapTrap::ClapTrap(const std::string& name) : name(name)
 {
 	this->type = "CL4P-TP";
 	this->hp = 0;
@@ -23,12 +23,12 @@ ClapTrap::~ClapTrap()
 	std::cout << "CL4P-TP " << name << " destroyed" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap const &other) : name(other.name)
+ClapTrap::ClapTrap(const ClapTrap& other) : name(other.name)
 {
 	*this = other;
 }
 
-ClapTrap	&ClapTrap::operator=(ClapTrap const &other)
+ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 {
 	this->name = other.name;
 	this->hp = other.hp;
@@ -42,14 +42,14 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &other)
 	return (*this);
 }
 
-void		ClapTrap::rangedAttack(std::string const &target)
+void		ClapTrap::rangedAttack(const std::string& target)
 {
 	std::cout << type << " " << name << " attacks " << target <<
 		" at range, causing " << ranged_dmg << " points of damage!" <<
 		std::endl;
 }
 
-void		ClapTrap::meleeAttack(std::string const &target)
+void		ClapTrap::meleeAttack(const std::string& target)
 {
 	std::cout << type << " " << name << " attacks " << target <<
 		" at melee, causing " << melee_dmg << " points of damage!" <<

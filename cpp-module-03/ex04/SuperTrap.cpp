@@ -4,7 +4,7 @@ SuperTrap::SuperTrap() : ClapTrap(), FragTrap(), NinjaTrap()
 {
 }
 
-SuperTrap::SuperTrap(std::string const &name) : ClapTrap(name),
+SuperTrap::SuperTrap(const std::string& name) : ClapTrap(name),
 	FragTrap(name), NinjaTrap(name)
 {
 	this->type = "SUP3R-TP";
@@ -27,13 +27,13 @@ SuperTrap::~SuperTrap()
 		" says: \"The robot is dead, long live the robot!\" [dies]" << std::endl;
 }
 
-SuperTrap::SuperTrap(SuperTrap const &other) : ClapTrap(other.name),
+SuperTrap::SuperTrap(const SuperTrap& other) : ClapTrap(other.name),
 	FragTrap(other.name), NinjaTrap(other.name)
 {
 	*this = other;
 }
 
-SuperTrap	&SuperTrap::operator=(SuperTrap const &other)
+SuperTrap&	SuperTrap::operator=(const SuperTrap& other)
 {
 	this->name = other.name;
 	this->hp = other.hp;
@@ -47,12 +47,12 @@ SuperTrap	&SuperTrap::operator=(SuperTrap const &other)
 	return (*this);
 }
 
-void		SuperTrap::rangedAttack(std::string const &target)
+void		SuperTrap::rangedAttack(const std::string& target)
 {
 	FragTrap::rangedAttack(target);
 }
 
-void		SuperTrap::meleeAttack(std::string const &target)
+void		SuperTrap::meleeAttack(const std::string& target)
 {
 	NinjaTrap::meleeAttack(target);
 }

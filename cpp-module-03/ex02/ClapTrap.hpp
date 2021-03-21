@@ -18,13 +18,13 @@ protected:
 	std::string		type;
 	ClapTrap();
 public:
-	ClapTrap(std::string const &name);
+	ClapTrap(const std::string& name);
 	virtual	~ClapTrap();
-	ClapTrap(ClapTrap const &other);
-	ClapTrap &operator=(ClapTrap const &other);
+	ClapTrap(const ClapTrap& other);
+	ClapTrap&		operator=(const ClapTrap& other);
 
-	virtual void	rangedAttack(std::string const &target);
-	virtual void	meleeAttack(std::string const &target);
+	virtual void	rangedAttack(const std::string& target);
+	virtual void	meleeAttack(const std::string& target);
 	void			takeDamage(unsigned int amount);
 	void			beRepaired(unsigned int amount);
 };

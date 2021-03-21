@@ -13,14 +13,14 @@ private:
 	static const std::string	quotes[qcount];
 	FragTrap();
 public:
-	FragTrap(std::string const &name);
+	FragTrap(const std::string& name);
 	virtual	~FragTrap();
-	FragTrap(FragTrap const &other);
-	FragTrap &operator=(FragTrap const &other);
+	FragTrap(const FragTrap& other);
+	FragTrap&	operator=(const FragTrap& other);
 
-	void						rangedAttack(std::string const &target);
-	void						meleeAttack(std::string const &target);
-	void						vaulthunter_dot_exe(std::string const &target);
+	void		rangedAttack(const std::string& target);
+	void		meleeAttack(const std::string& target);
+	void		vaulthunter_dot_exe(const std::string& target);
 };
 
 #endif

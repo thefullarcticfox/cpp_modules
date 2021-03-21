@@ -13,14 +13,14 @@ private:
 	static const std::string	challenges[ccount];
 	ScavTrap();
 public:
-	ScavTrap(std::string const &name);
+	ScavTrap(const std::string& name);
 	virtual	~ScavTrap();
-	ScavTrap(ScavTrap const &other);
-	ScavTrap &operator=(ScavTrap const &other);
+	ScavTrap(const ScavTrap& other);
+	ScavTrap&	operator=(const ScavTrap& other);
 
-	void						rangedAttack(std::string const &target);
-	void						meleeAttack(std::string const &target);
-	void						challengeNewcomer(void);
+	void		rangedAttack(const std::string& target);
+	void		meleeAttack(const std::string& target);
+	void		challengeNewcomer(void);
 };
 
 #endif

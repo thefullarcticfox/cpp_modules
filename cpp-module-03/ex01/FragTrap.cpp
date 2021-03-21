@@ -17,7 +17,7 @@ FragTrap::FragTrap()
 {
 }
 
-FragTrap::FragTrap(std::string const &name) : name(name)
+FragTrap::FragTrap(const std::string& name) : name(name)
 {
 	this->hp = 100;
 	this->max_hp = 100;
@@ -37,12 +37,12 @@ FragTrap::~FragTrap()
 		" says: \"I can see... the code...\" [dies]" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &other) : name(other.name)
+FragTrap::FragTrap(const FragTrap& other) : name(other.name)
 {
 	*this = other;
 }
 
-FragTrap	&FragTrap::operator=(FragTrap const &other)
+FragTrap&	FragTrap::operator=(const FragTrap& other)
 {
 	this->name = other.name;
 	this->hp = other.hp;
@@ -56,14 +56,14 @@ FragTrap	&FragTrap::operator=(FragTrap const &other)
 	return (*this);
 }
 
-void		FragTrap::rangedAttack(std::string const &target)
+void		FragTrap::rangedAttack(const std::string& target)
 {
 	std::cout << type << " " << name << " fragattacks " << target <<
 		" at range, causing " << ranged_dmg << " points of damage!" <<
 		std::endl;
 }
 
-void		FragTrap::meleeAttack(std::string const &target)
+void		FragTrap::meleeAttack(const std::string& target)
 {
 	std::cout << type << " " << name << " fragattacks " << target <<
 		" at melee, causing " << melee_dmg << " points of damage!" <<
@@ -107,7 +107,7 @@ void		FragTrap::beRepaired(unsigned int amount)
 		std::cout << type << " " << name << " is at max hp!" << std::endl;
 }
 
-void		FragTrap::vaulthunter_dot_exe(std::string const &target)
+void		FragTrap::vaulthunter_dot_exe(const std::string& target)
 {
 	if (ep < 25)
 		std::cout << type << " " << name << " is out of energy!" << std::endl;

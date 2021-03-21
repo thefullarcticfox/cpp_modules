@@ -4,7 +4,7 @@ NinjaTrap::NinjaTrap() : ClapTrap()
 {
 }
 
-NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap(name)
+NinjaTrap::NinjaTrap(const std::string& name) : ClapTrap(name)
 {
 	this->type = "N1NJ4-TP";
 	this->hp = 60;
@@ -26,12 +26,12 @@ NinjaTrap::~NinjaTrap()
 		" says: \"Metal gears... frozen solid!\" [dies]" << std::endl;
 }
 
-NinjaTrap::NinjaTrap(NinjaTrap const &other) : ClapTrap(other.name)
+NinjaTrap::NinjaTrap(const NinjaTrap& other) : ClapTrap(other.name)
 {
 	*this = other;
 }
 
-NinjaTrap	&NinjaTrap::operator=(NinjaTrap const &other)
+NinjaTrap&	NinjaTrap::operator=(const NinjaTrap& other)
 {
 	this->name = other.name;
 	this->hp = other.hp;
@@ -45,40 +45,40 @@ NinjaTrap	&NinjaTrap::operator=(NinjaTrap const &other)
 	return (*this);
 }
 
-void		NinjaTrap::rangedAttack(std::string const &target)
+void		NinjaTrap::rangedAttack(const std::string& target)
 {
 	std::cout << type << " " << name << " ninjattacks " << target <<
 		" at range, causing " << ranged_dmg << " points of damage!" <<
 		std::endl;
 }
 
-void		NinjaTrap::meleeAttack(std::string const &target)
+void		NinjaTrap::meleeAttack(const std::string& target)
 {
 	std::cout << type << " " << name << " ninjattacks " << target <<
 		" at melee, causing " << melee_dmg << " points of damage!" <<
 		std::endl;
 }
 
-void		NinjaTrap::ninjaShoebox(ClapTrap &trap)
+void		NinjaTrap::ninjaShoebox(const ClapTrap& trap)
 {
 	std::cout << type << " " << name <<
 		" causes segfault to the innocent CL4P-TP " << trap.getname() <<
 		" (he wasn't even programmed to handle it)" << std::endl;
 }
 
-void		NinjaTrap::ninjaShoebox(FragTrap &trap)
+void		NinjaTrap::ninjaShoebox(const FragTrap& trap)
 {
 	std::cout << type << " " << name << " slaps FR4G-TP " << trap.getname() <<
 		" with some kind of fish he found in a lake (what?)" << std::endl;
 }
 
-void		NinjaTrap::ninjaShoebox(ScavTrap &trap)
+void		NinjaTrap::ninjaShoebox(const ScavTrap& trap)
 {
 	std::cout << type << " " << name << " stabs SC4V-TP " << trap.getname() <<
 		" with a spoon from the bushes (is he mad or something)" << std::endl;
 }
 
-void		NinjaTrap::ninjaShoebox(NinjaTrap &trap)
+void		NinjaTrap::ninjaShoebox(const NinjaTrap& trap)
 {
 	if (this == &trap)
 		std::cout << type << " " << name << " hits himself with a pipe " <<

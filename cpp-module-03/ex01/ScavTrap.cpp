@@ -14,7 +14,7 @@ ScavTrap::ScavTrap()
 {
 }
 
-ScavTrap::ScavTrap(std::string const &name) : name(name)
+ScavTrap::ScavTrap(const std::string& name) : name(name)
 {
 	this->hp = 100;
 	this->max_hp = 100;
@@ -35,12 +35,12 @@ ScavTrap::~ScavTrap()
 		" says: \"My servos... are seizing..\" [dies]" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &other) : name(other.name)
+ScavTrap::ScavTrap(const ScavTrap& other) : name(other.name)
 {
 	*this = other;
 }
 
-ScavTrap	&ScavTrap::operator=(ScavTrap const &other)
+ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
 {
 	this->name = other.name;
 	this->hp = other.hp;
@@ -54,14 +54,14 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &other)
 	return (*this);
 }
 
-void		ScavTrap::rangedAttack(std::string const &target)
+void		ScavTrap::rangedAttack(const std::string& target)
 {
 	std::cout << type << " " << name << " scavattacks " << target <<
 		" at range, causing " << ranged_dmg << " points of damage!" <<
 		std::endl;
 }
 
-void		ScavTrap::meleeAttack(std::string const &target)
+void		ScavTrap::meleeAttack(const std::string& target)
 {
 	std::cout << type << " " << name << " scavattacks " << target <<
 		" at melee, causing " << melee_dmg << " points of damage!" <<
