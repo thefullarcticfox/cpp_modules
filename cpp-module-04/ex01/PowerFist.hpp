@@ -9,10 +9,10 @@ class PowerFist : public AWeapon {
 public:
 	PowerFist();
 	virtual ~PowerFist();
-	PowerFist(PowerFist const &other);
-	PowerFist &operator=(PowerFist const &other);
+	PowerFist(const PowerFist& other);
+	PowerFist&	operator=(const PowerFist& other);
 
-	void			attack(void) const;
+	void		attack(void) const;
 };
 
 #endif

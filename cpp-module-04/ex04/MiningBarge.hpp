@@ -7,15 +7,15 @@
 class MiningBarge {
 private:
 	int				lasercount;
-	IMiningLaser	*lasers[4];
+	IMiningLaser*	lasers[4];
 public:
 	MiningBarge();
 	~MiningBarge();
-	MiningBarge(MiningBarge const &other);
-	MiningBarge &operator=(MiningBarge const &other);
+	MiningBarge(const MiningBarge& other);
+	MiningBarge&	operator=(const MiningBarge& other);
 
-	void			equip(IMiningLaser *laser);
-	void			mine(IAsteroid *asteroid) const;
+	void			equip(IMiningLaser* laser);
+	void			mine(IAsteroid* asteroid) const;
 };
 
 #endif

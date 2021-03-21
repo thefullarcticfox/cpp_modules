@@ -11,12 +11,12 @@ private:
 public:
 	Squad();
 	virtual ~Squad();
-	Squad(Squad const &other);
-	Squad &operator=(Squad const &other);
+	Squad(const Squad& other);
+	Squad&			operator=(const Squad& other);
 
 	int				getCount(void) const;
-	ISpaceMarine 	*getUnit(int number) const;
-	int				push(ISpaceMarine *unit);
+	ISpaceMarine*	getUnit(int number) const;
+	int				push(ISpaceMarine* unit);
 };
 
 #endif

@@ -13,12 +13,12 @@ MiningBarge::~MiningBarge()
 {
 }
 
-MiningBarge::MiningBarge(MiningBarge const &other)
+MiningBarge::MiningBarge(const MiningBarge& other)
 {
 	*this = other;
 }
 
-MiningBarge &MiningBarge::operator=(MiningBarge const &other)
+MiningBarge&	MiningBarge::operator=(const MiningBarge& other)
 {
 	int		i = 0;
 
@@ -31,7 +31,7 @@ MiningBarge &MiningBarge::operator=(MiningBarge const &other)
 	return (*this);
 }
 
-void	MiningBarge::equip(IMiningLaser *laser)
+void			MiningBarge::equip(IMiningLaser* laser)
 {
 	if (this->lasercount == 4 || laser == NULL)
 		return ;
@@ -39,7 +39,7 @@ void	MiningBarge::equip(IMiningLaser *laser)
 	this->lasercount++;
 }
 
-void	MiningBarge::mine(IAsteroid *asteroid) const
+void			MiningBarge::mine(IAsteroid* asteroid) const
 {
 	int		i = 0;
 

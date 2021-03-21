@@ -9,10 +9,10 @@ class BFG9000 : public AWeapon {
 public:
 	BFG9000();
 	virtual ~BFG9000();
-	BFG9000(BFG9000 const &other);
-	BFG9000 &operator=(BFG9000 const &other);
+	BFG9000(const BFG9000& other);
+	BFG9000&	operator=(const BFG9000& other);
 
-	void			attack(void) const;
+	void		attack(void) const;
 };
 
 #endif

@@ -8,12 +8,12 @@ Ice::~Ice()
 {
 }
 
-Ice::Ice(Ice const &other) : AMateria("ice")
+Ice::Ice(const Ice& other) : AMateria("ice")
 {
 	*this = other;
 }
 
-Ice 		&Ice::operator=(Ice const &other)
+Ice&		Ice::operator=(const Ice& other)
 {
 	AMateria::operator=(other);
 	return (*this);
@@ -21,11 +21,10 @@ Ice 		&Ice::operator=(Ice const &other)
 
 AMateria*	Ice::clone(void) const
 {
-	AMateria	*dup = new Ice(*this);
-	return (dup);
+	return (new Ice(*this));
 }
 
-void		Ice::use(ICharacter &target)
+void		Ice::use(ICharacter& target)
 {
 	AMateria::use(target);
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" <<

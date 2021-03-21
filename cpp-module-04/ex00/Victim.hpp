@@ -10,15 +10,15 @@ private:
 protected:
 	std::string			name;
 public:
-	Victim(std::string const &name);
+	Victim(const std::string& name);
 	virtual ~Victim();
-	Victim(Victim const &other);
-	Victim &operator=(Victim const &other);
+	Victim(const Victim& other);
+	Victim&		operator=(const Victim& other);
 
-	std::string const	&getname(void) const;
+	const std::string&	getname(void) const;
 	virtual void		getPolymorphed(void) const;
 };
 
-std::ostream			&operator<<(std::ostream &os, Victim const &vict);
+std::ostream&			operator<<(std::ostream& os, const Victim& vict);
 
 #endif

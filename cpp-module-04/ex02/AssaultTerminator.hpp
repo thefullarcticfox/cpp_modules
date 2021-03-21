@@ -8,10 +8,10 @@ class AssaultTerminator : public ISpaceMarine {
 public:
 	AssaultTerminator();
 	virtual ~AssaultTerminator();
-	AssaultTerminator(AssaultTerminator const &other);
-	AssaultTerminator &operator=(AssaultTerminator const &other);
+	AssaultTerminator(const AssaultTerminator& other);
+	AssaultTerminator&	operator=(const AssaultTerminator& other);
 
-	ISpaceMarine	*clone(void) const;
+	ISpaceMarine*	clone(void) const;
 	void			battleCry(void) const;
 	void			rangedAttack(void) const;
 	void			meleeAttack(void) const;

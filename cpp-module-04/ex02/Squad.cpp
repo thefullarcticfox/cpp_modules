@@ -18,14 +18,14 @@ Squad::~Squad()
 	}
 }
 
-Squad::Squad(Squad const &other)
+Squad::Squad(const Squad& other)
 {
 	this->marines = NULL;
 	this->count = 0;
 	*this = other;
 }
 
-Squad			&Squad::operator=(Squad const &other)
+Squad&			Squad::operator=(const Squad& other)
 {
 	int		i = -1;
 
@@ -50,14 +50,14 @@ int				Squad::getCount(void) const
 	return (this->count);
 }
 
-ISpaceMarine 	*Squad::getUnit(int id) const
+ISpaceMarine*	Squad::getUnit(int id) const
 {
 	if (id >= 0 && id < count)
 		return (marines[id]);
 	return (NULL);
 }
 
-int				Squad::push(ISpaceMarine *unit)
+int				Squad::push(ISpaceMarine* unit)
 {
 	ISpaceMarine	**dup;
 	int				i;

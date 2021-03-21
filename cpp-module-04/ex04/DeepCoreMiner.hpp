@@ -9,10 +9,10 @@ class DeepCoreMiner : public IMiningLaser {
 public:
 	DeepCoreMiner();
 	virtual ~DeepCoreMiner();
-	DeepCoreMiner(DeepCoreMiner const &other);
-	DeepCoreMiner &operator=(DeepCoreMiner const &other);
+	DeepCoreMiner(const DeepCoreMiner& other);
+	DeepCoreMiner&	operator=(const DeepCoreMiner& other);
 
-	void	mine(IAsteroid *asteroid);
+	void			mine(IAsteroid* asteroid);
 };
 
 #endif

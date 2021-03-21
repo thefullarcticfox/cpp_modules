@@ -10,23 +10,23 @@ class Character {
 private:
 	std::string			name;
 	int					ap;
-	AWeapon				*weapon;
+	AWeapon*			weapon;
 	Character();
 public:
-	Character(std::string const &name);
+	Character(const std::string& name);
 	virtual ~Character();
-	Character(Character const &other);
-	Character &operator=(Character const &other);
+	Character(const Character& other);
+	Character&			operator=(const Character& other);
 
 	void				recoverAP(void);
-	void				equip(AWeapon *weapon);
-	void				attack(Enemy *enemy);
-	std::string const	&getName(void) const;
-	int const			&getAP(void) const;
+	void				equip(AWeapon* weapon);
+	void				attack(Enemy* enemy);
+	const std::string&	getName(void) const;
+	int					getAP(void) const;
 	bool				isArmed(void) const;
-	std::string const	&getWeaponName(void) const;
+	const std::string&	getWeaponName(void) const;
 };
 
-std::ostream			&operator<<(std::ostream &os, Character const &ch);
+std::ostream&			operator<<(std::ostream& os, const Character& ch);
 
 #endif

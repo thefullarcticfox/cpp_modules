@@ -4,7 +4,7 @@ Peon::Peon() : Victim("peon")
 {
 }
 
-Peon::Peon(std::string const &name) : Victim(name)
+Peon::Peon(const std::string& name) : Victim(name)
 {
 	std::cout << "Zog zog." << std::endl;
 }
@@ -14,12 +14,12 @@ Peon::~Peon()
 	std::cout << "Bleuark..." << std::endl;
 }
 
-Peon::Peon(Peon const &other) : Victim(other.name)
+Peon::Peon(const Peon& other) : Victim(other.name)
 {
 	*this = other;
 }
 
-Peon	&Peon::operator=(Peon const &other)
+Peon&	Peon::operator=(const Peon& other)
 {
 	this->name = other.name;
 	return (*this);

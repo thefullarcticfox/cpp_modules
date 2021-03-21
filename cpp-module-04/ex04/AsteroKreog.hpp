@@ -12,12 +12,12 @@ private:
 public:
 	AsteroKreog();
 	~AsteroKreog();
-	AsteroKreog(AsteroKreog const &other);
-	AsteroKreog &operator=(AsteroKreog const &other);
+	AsteroKreog(const AsteroKreog& other);
+	AsteroKreog&	operator=(const AsteroKreog& other);
 
-	std::string		beMined(DeepCoreMiner *laser) const;
-	std::string		beMined(StripMiner *laser) const;
-	std::string		getName(void) const;
+	std::string			beMined(DeepCoreMiner* laser) const;
+	std::string			beMined(StripMiner* laser) const;
+	const std::string&	getName(void) const;
 };
 
 #endif

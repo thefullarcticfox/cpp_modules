@@ -10,12 +10,12 @@ SuperMutant::~SuperMutant()
 	std::cout << "Aaargh..." << std::endl;
 }
 
-SuperMutant::SuperMutant(SuperMutant const &other) : Enemy(170, "Super Mutant")
+SuperMutant::SuperMutant(const SuperMutant& other) : Enemy(170, "Super Mutant")
 {
 	*this = other;
 }
 
-SuperMutant		&SuperMutant::operator=(SuperMutant const &other)
+SuperMutant&	SuperMutant::operator=(const SuperMutant& other)
 {
 	Enemy::operator=(other);
 	return (*this);

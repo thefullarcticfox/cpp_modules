@@ -8,30 +8,30 @@ AsteroKreog::~AsteroKreog()
 {
 }
 
-AsteroKreog::AsteroKreog(AsteroKreog const &other)
+AsteroKreog::AsteroKreog(const AsteroKreog& other)
 {
 	*this = other;
 }
 
-AsteroKreog		&AsteroKreog::operator=(AsteroKreog const &other)
+AsteroKreog&		AsteroKreog::operator=(const AsteroKreog& other)
 {
 	this->name = other.name;
 	return (*this);
 }
 
-std::string		AsteroKreog::beMined(DeepCoreMiner *laser) const
+std::string			AsteroKreog::beMined(DeepCoreMiner* laser) const
 {
 	(void)laser;
 	return ("Dragonite");
 }
 
-std::string		AsteroKreog::beMined(StripMiner *laser) const
+std::string			AsteroKreog::beMined(StripMiner* laser) const
 {
 	(void)laser;
 	return ("Flavium");
 }
 
-std::string		AsteroKreog::getName(void) const
+const std::string&	AsteroKreog::getName(void) const
 {
 	return (this->name);
 }

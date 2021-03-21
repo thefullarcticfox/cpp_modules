@@ -4,7 +4,7 @@ Victim::Victim()
 {
 }
 
-Victim::Victim(std::string const &name) : name(name)
+Victim::Victim(const std::string& name) : name(name)
 {
 	std::cout << "Some random victim called " << this->name <<
 		" just appeared!" << std::endl;
@@ -16,18 +16,18 @@ Victim::~Victim()
 		" just died for no apparent reason!" << std::endl;
 }
 
-Victim::Victim(Victim const &other)
+Victim::Victim(const Victim& other)
 {
 	*this = other;
 }
 
-Victim				&Victim::operator=(Victim const &other)
+Victim&				Victim::operator=(const Victim& other)
 {
 	this->name = other.name;
 	return (*this);
 }
 
-std::string const	&Victim::getname(void) const
+const std::string&	Victim::getname(void) const
 {
 	return (this->name);
 }
@@ -38,7 +38,7 @@ void				Victim::getPolymorphed(void) const
 		std::endl;
 }
 
-std::ostream		&operator<<(std::ostream &os, Victim const &vict)
+std::ostream&		operator<<(std::ostream& os, const Victim& vict)
 {
 	os << "I'm " << vict.getname() << " and I like otters!" << std::endl;
 	return (os);

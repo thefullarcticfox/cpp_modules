@@ -4,7 +4,7 @@ AWeapon::AWeapon()
 {
 }
 
-AWeapon::AWeapon(std::string const &name, int apcost, int damage)
+AWeapon::AWeapon(const std::string& name, int apcost, int damage)
 {
 	this->name = name;
 	this->apcost = apcost;
@@ -15,12 +15,12 @@ AWeapon::~AWeapon()
 {
 }
 
-AWeapon::AWeapon(AWeapon const &other)
+AWeapon::AWeapon(const AWeapon& other)
 {
 	*this = other;
 }
 
-AWeapon				&AWeapon::operator=(AWeapon const &other)
+AWeapon&			AWeapon::operator=(const AWeapon& other)
 {
 	this->name = other.name;
 	this->apcost = other.apcost;
@@ -28,7 +28,7 @@ AWeapon				&AWeapon::operator=(AWeapon const &other)
 	return (*this);
 }
 
-std::string const	&AWeapon::getName(void) const
+const std::string&	AWeapon::getName(void) const
 {
 	return (this->name);
 }

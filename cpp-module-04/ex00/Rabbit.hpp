@@ -9,10 +9,10 @@ class Rabbit : public Victim {
 private:
 	Rabbit();
 public:
-	Rabbit(std::string const &name);
+	Rabbit(const std::string& name);
 	virtual ~Rabbit();
-	Rabbit(Rabbit const &other);
-	Rabbit &operator=(Rabbit const &other);
+	Rabbit(const Rabbit& other);
+	Rabbit&	operator=(const Rabbit& other);
 
 	void	getPolymorphed(void) const;
 };

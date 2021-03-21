@@ -5,10 +5,10 @@
 
 int		main(void)
 {
-	ISpaceMarine	*bob = new TacticalMarine;
-	ISpaceMarine	*jim = new AssaultTerminator;
+	ISpaceMarine*	bob = new TacticalMarine;
+	ISpaceMarine*	jim = new AssaultTerminator;
 
-	ISquad			*vlc = new Squad;
+	ISquad*			vlc = new Squad;
 	vlc->push(bob);
 	vlc->push(jim);
 	for (int i = 0; i < vlc->getCount(); ++i)
@@ -28,11 +28,11 @@ int		main(void)
 	vlc1.push(bob);
 	vlc1.push(jim);
 
-	Squad			*vlc2 = new Squad;
-	ISpaceMarine	*bob1 = new TacticalMarine;
-	ISpaceMarine	*bob2 = new TacticalMarine;
-	ISpaceMarine	*jim1 = new AssaultTerminator;
-	ISpaceMarine	*jim2 = new AssaultTerminator;
+	Squad*			vlc2 = new Squad;
+	ISpaceMarine*	bob1 = new TacticalMarine;
+	ISpaceMarine*	bob2 = new TacticalMarine;
+	ISpaceMarine*	jim1 = new AssaultTerminator;
+	ISpaceMarine*	jim2 = new AssaultTerminator;
 	vlc2->push(bob1);
 	vlc2->push(bob2);
 	vlc2->push(jim2);

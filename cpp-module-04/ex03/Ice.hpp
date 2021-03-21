@@ -10,11 +10,11 @@ class Ice : public AMateria {
 public:
 	Ice();
 	virtual ~Ice();
-	Ice(Ice const &other);
-	Ice &operator=(Ice const &other);
+	Ice(const Ice& other);
+	Ice&		operator=(const Ice& other);
 
 	AMateria*	clone(void) const;
-	void		use(ICharacter &target);
+	void		use(ICharacter& target);
 };
 
 #endif

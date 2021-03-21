@@ -10,12 +10,12 @@ private:
 	std::string			type;
 	Enemy();
 public:
-	Enemy(int hp, std::string const &type);
+	Enemy(int hp, const std::string& type);
 	virtual ~Enemy();
-	Enemy(Enemy const &other);
-	Enemy &operator=(Enemy const &other);
+	Enemy(const Enemy& other);
+	Enemy&				operator=(const Enemy& other);
 
-	std::string const	&getType(void) const;
+	const std::string&	getType(void) const;
 	int					getHP(void) const;
 	virtual void		takeDamage(int dmg);
 };

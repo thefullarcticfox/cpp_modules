@@ -8,13 +8,13 @@ PlasmaRifle::~PlasmaRifle()
 {
 }
 
-PlasmaRifle::PlasmaRifle(PlasmaRifle const &other) :
+PlasmaRifle::PlasmaRifle(const PlasmaRifle& other) :
 	AWeapon("Plasma Rifle", 5, 21)
 {
 	*this = other;
 }
 
-PlasmaRifle		&PlasmaRifle::operator=(PlasmaRifle const &other)
+PlasmaRifle&	PlasmaRifle::operator=(const PlasmaRifle& other)
 {
 	AWeapon::operator=(other);
 	return (*this);

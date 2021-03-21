@@ -9,10 +9,10 @@ class StripMiner : public IMiningLaser {
 public:
 	StripMiner();
 	virtual ~StripMiner();
-	StripMiner(StripMiner const &other);
-	StripMiner &operator=(StripMiner const &other);
+	StripMiner(const StripMiner& other);
+	StripMiner&	operator=(const StripMiner& other);
 
-	void	mine(IAsteroid *asteroid);
+	void		mine(IAsteroid* asteroid);
 };
 
 #endif

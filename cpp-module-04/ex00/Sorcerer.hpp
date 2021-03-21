@@ -11,16 +11,16 @@ private:
 	std::string			title;
 	Sorcerer();
 public:
-	Sorcerer(std::string const &name, std::string const &title);
+	Sorcerer(const std::string& name, const std::string& title);
 	virtual ~Sorcerer();
-	Sorcerer(Sorcerer const &other);
-	Sorcerer &operator=(Sorcerer const &other);
+	Sorcerer(const Sorcerer& other);
+	Sorcerer&	operator=(const Sorcerer& other);
 
-	std::string const	&getname(void) const;
-	std::string const	&gettitle(void) const;
-	void				polymorph(Victim const &vict) const;
+	const std::string&	getname(void) const;
+	const std::string&	gettitle(void) const;
+	void				polymorph(const Victim& vict) const;
 };
 
-std::ostream			&operator<<(std::ostream &os, Sorcerer const &src);
+std::ostream&			operator<<(std::ostream& os, const Sorcerer& src);
 
 #endif

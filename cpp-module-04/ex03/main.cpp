@@ -9,19 +9,19 @@
 
 int		main(void)
 {
-	IMateriaSource	*src = new MateriaSource();
+	IMateriaSource*	src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	AMateria		*tmp1 = new Cure();
+	AMateria*		tmp1 = new Cure();
 	src->learnMateria(tmp1);
 	src->learnMateria(tmp1);
 	delete (tmp1);
 
-	ICharacter		*me = new Character("me");
+	ICharacter*		me = new Character("me");
 
-	AMateria		*tmp;
+	AMateria*		tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
@@ -31,7 +31,7 @@ int		main(void)
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 
-	ICharacter		*bob = new Character("bob");
+	ICharacter*		bob = new Character("bob");
 
 	me->use(-1, *bob);
 	me->use(0, *bob);
@@ -42,19 +42,19 @@ int		main(void)
 
 	delete (bob);
 
-	Character		*bob1 = new Character("bob1");
-	Character		*bob2 = new Character("bob2");
+	Character*		bob1 = new Character("bob1");
+	Character*		bob2 = new Character("bob2");
 	tmp = src->createMateria("cure");
 	bob2->equip(tmp);
 	tmp = src->createMateria("ice");
 	bob2->equip(tmp);
 	*bob1 = *bob2;
 
-	MateriaSource	*src2 = new MateriaSource();
+	MateriaSource*	src2 = new MateriaSource();
 	*src2 = *(dynamic_cast<MateriaSource*>(src));
 	tmp = src2->createMateria("ice");
 	bob1->equip(tmp);
-	AMateria		*tmp2 = src2->createMateria("ice");
+	AMateria*		tmp2 = src2->createMateria("ice");
 	bob1->equip(tmp2);
 
 	bob1->unequip(-1);
@@ -74,7 +74,7 @@ int		main(void)
 	bob2->use(3, *me);
 	std::cout << tmp->getType() << " has " << tmp->getXP() << "XP" << std::endl;
 
-	MateriaSource	*src3 = new MateriaSource();
+	MateriaSource*	src3 = new MateriaSource();
 	*src2 = *src3;
 	delete (bob1);
 	delete (bob2);

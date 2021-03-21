@@ -9,10 +9,10 @@ class DeathClaw : public Enemy {
 public:
 	DeathClaw();
 	virtual ~DeathClaw();
-	DeathClaw(DeathClaw const &other);
-	DeathClaw &operator=(DeathClaw const &other);
+	DeathClaw(const DeathClaw& other);
+	DeathClaw&	operator=(const DeathClaw& other);
 
-	void	takeDamage(int dmg);
+	void		takeDamage(int dmg);
 };
 
 #endif

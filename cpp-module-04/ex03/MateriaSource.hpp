@@ -9,15 +9,15 @@
 class MateriaSource : public IMateriaSource {
 private:
 	int			known;
-	AMateria	*storage[4];
+	AMateria*	storage[4];
 public:
 	MateriaSource();
 	virtual ~MateriaSource();
-	MateriaSource(MateriaSource const &other);
-	MateriaSource &operator=(MateriaSource const &other);
+	MateriaSource(const MateriaSource& other);
+	MateriaSource&	operator=(const MateriaSource& other);
 
-	void		learnMateria(AMateria *materia);
-	AMateria*	createMateria(std::string const &type);
+	void		learnMateria(AMateria* materia);
+	AMateria*	createMateria(const std::string& type);
 };
 
 #endif

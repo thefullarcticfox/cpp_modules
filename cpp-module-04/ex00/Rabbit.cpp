@@ -4,7 +4,7 @@ Rabbit::Rabbit() : Victim("rabbit")
 {
 }
 
-Rabbit::Rabbit(std::string const &name) : Victim(name)
+Rabbit::Rabbit(const std::string& name) : Victim(name)
 {
 	std::cout << "* squeaks *" << std::endl;
 }
@@ -14,12 +14,12 @@ Rabbit::~Rabbit()
 	std::cout << "* painful animal noises *" << std::endl;
 }
 
-Rabbit::Rabbit(Rabbit const &other) : Victim(other.name)
+Rabbit::Rabbit(const Rabbit& other) : Victim(other.name)
 {
 	*this = other;
 }
 
-Rabbit	&Rabbit::operator=(Rabbit const &other)
+Rabbit&	Rabbit::operator=(const Rabbit& other)
 {
 	this->name = other.name;
 	return (*this);

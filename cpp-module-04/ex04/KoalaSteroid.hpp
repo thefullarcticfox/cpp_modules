@@ -12,12 +12,12 @@ private:
 public:
 	KoalaSteroid();
 	~KoalaSteroid();
-	KoalaSteroid(KoalaSteroid const &other);
-	KoalaSteroid &operator=(KoalaSteroid const &other);
+	KoalaSteroid(const KoalaSteroid& other);
+	KoalaSteroid&		operator=(const KoalaSteroid& other);
 
-	std::string		beMined(DeepCoreMiner *laser) const;
-	std::string		beMined(StripMiner *laser) const;
-	std::string		getName(void) const;
+	std::string			beMined(DeepCoreMiner* laser) const;
+	std::string			beMined(StripMiner* laser) const;
+	const std::string&	getName(void) const;
 };
 
 #endif

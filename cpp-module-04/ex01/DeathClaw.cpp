@@ -10,12 +10,12 @@ DeathClaw::~DeathClaw()
 	std::cout << "RRRRAGHHHHHHHHHH..." << std::endl;
 }
 
-DeathClaw::DeathClaw(DeathClaw const &other) : Enemy(5000, "Death Claw")
+DeathClaw::DeathClaw(const DeathClaw& other) : Enemy(5000, "Death Claw")
 {
 	*this = other;
 }
 
-DeathClaw		&DeathClaw::operator=(DeathClaw const &other)
+DeathClaw&		DeathClaw::operator=(const DeathClaw& other)
 {
 	Enemy::operator=(other);
 	return (*this);

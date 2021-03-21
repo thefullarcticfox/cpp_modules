@@ -11,14 +11,14 @@
 
 int		main(void)
 {
-	Character	*me = new Character("me");
+	Character*	me = new Character("me");
 
 	std::cout << *me;
 
-	Enemy		*b = new RadScorpion();
+	Enemy*		b = new RadScorpion();
 
-	AWeapon		*pr = new PlasmaRifle();
-	AWeapon		*pf = new PowerFist();
+	AWeapon*	pr = new PlasmaRifle();
+	AWeapon*	pf = new PowerFist();
 
 	me->equip(pr);
 	std::cout << *me;
@@ -36,8 +36,8 @@ int		main(void)
 	std::cout << "--------------------------------------------------" <<
 		std::endl;
 
-	AWeapon		*bfg = new BFG9000();
-	Enemy		*sm = new SuperMutant();
+	AWeapon*	bfg = new BFG9000();
+	Enemy*		sm = new SuperMutant();
 	me->attack(NULL);		// nothing happens
 	me->equip(pf);
 	std::cout << *me << sm->getType() << " has " << sm->getHP() << "HP" <<
@@ -59,7 +59,7 @@ int		main(void)
 	me->attack(sm);			// supermutant deleted here
 	std::cout << *me << std::endl;
 
-	Enemy		*death = new DeathClaw();
+	Enemy*		death = new DeathClaw();
 	std::cout << *me << death->getType() << " has " << death->getHP() << "HP" <<
 		std::endl;
 	me->recoverAP();

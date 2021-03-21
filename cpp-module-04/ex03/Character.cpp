@@ -4,7 +4,7 @@ Character::Character()
 {
 }
 
-Character::Character(std::string const &name) : name(name)
+Character::Character(const std::string& name) : name(name)
 {
 	int		i = -1;
 
@@ -21,7 +21,7 @@ Character::~Character()
 		delete (this->inventory[i]);
 }
 
-Character::Character(Character const &other)
+Character::Character(const Character& other)
 {
 	int		i = -1;
 
@@ -31,7 +31,7 @@ Character::Character(Character const &other)
 	*this = other;
 }
 
-Character			&Character::operator=(Character const &other)
+Character&			Character::operator=(const Character& other)
 {
 	int		i = -1;
 
@@ -50,12 +50,12 @@ Character			&Character::operator=(Character const &other)
 	return (*this);
 }
 
-std::string const	&Character::getName(void) const
+const std::string&	Character::getName(void) const
 {
 	return (this->name);
 }
 
-void				Character::equip(AMateria *m)
+void				Character::equip(AMateria* m)
 {
 	int		i = -1;
 
@@ -84,7 +84,7 @@ void				Character::unequip(int idx)
 		this->inventory[j++] = NULL;
 }
 
-void				Character::use(int idx, ICharacter &target)
+void				Character::use(int idx, ICharacter& target)
 {
 	if (idx < 0 || idx >= this->equipped || this->inventory[idx] == NULL)
 		return ;

@@ -4,7 +4,7 @@ Sorcerer::Sorcerer()
 {
 }
 
-Sorcerer::Sorcerer(std::string const &name, std::string const &title) :
+Sorcerer::Sorcerer(const std::string& name, const std::string& title) :
 	name(name), title(title)
 {
 	std::cout << this->name << ", " << this->title << ", is born!" <<
@@ -17,34 +17,34 @@ Sorcerer::~Sorcerer()
 		"Consequences will never be the same!" << std::endl;
 }
 
-Sorcerer::Sorcerer(Sorcerer const &other)
+Sorcerer::Sorcerer(const Sorcerer& other)
 {
 	*this = other;
 }
 
-Sorcerer			&Sorcerer::operator=(Sorcerer const &other)
+Sorcerer&			Sorcerer::operator=(const Sorcerer& other)
 {
 	this->name = other.name;
 	this->title = other.title;
 	return (*this);
 }
 
-std::string const	&Sorcerer::getname(void) const
+const std::string&	Sorcerer::getname(void) const
 {
 	return (this->name);
 }
 
-std::string const	&Sorcerer::gettitle(void) const
+const std::string&	Sorcerer::gettitle(void) const
 {
 	return (this->title);
 }
 
-void				Sorcerer::polymorph(Victim const &vict) const
+void				Sorcerer::polymorph(const Victim& vict) const
 {
 	vict.getPolymorphed();
 }
 
-std::ostream		&operator<<(std::ostream &os, Sorcerer const &src)
+std::ostream&		operator<<(std::ostream& os, const Sorcerer& src)
 {
 	os << "I am " << src.getname() << ", " << src.gettitle() <<
 		", and I like ponies!" << std::endl;

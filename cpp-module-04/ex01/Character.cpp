@@ -4,7 +4,7 @@ Character::Character()
 {
 }
 
-Character::Character(std::string const &name)
+Character::Character(const std::string& name)
 {
 	this->name = name;
 	this->ap = 40;
@@ -15,12 +15,12 @@ Character::~Character()
 {
 }
 
-Character::Character(Character const &other)
+Character::Character(const Character& other)
 {
 	*this = other;
 }
 
-Character			&Character::operator=(Character const &other)
+Character&			Character::operator=(const Character& other)
 {
 	this->name = other.name;
 	this->ap = other.ap;
@@ -35,12 +35,12 @@ void				Character::recoverAP(void)
 		ap = 40;
 }
 
-void				Character::equip(AWeapon *weapon)
+void				Character::equip(AWeapon* weapon)
 {
 	this->weapon = weapon;
 }
 
-void				Character::attack(Enemy *enemy)
+void				Character::attack(Enemy* enemy)
 {
 	if (this->weapon == NULL || enemy == NULL)
 		return ;
@@ -60,12 +60,12 @@ void				Character::attack(Enemy *enemy)
 		delete (enemy);
 }
 
-std::string const	&Character::getName(void) const
+const std::string&	Character::getName(void) const
 {
 	return (this->name);
 }
 
-int const			&Character::getAP(void) const
+int					Character::getAP(void) const
 {
 	return (this->ap);
 }
@@ -75,7 +75,7 @@ bool				Character::isArmed(void) const
 	return (this->weapon != NULL);
 }
 
-std::string const	&Character::getWeaponName(void) const
+const std::string&	Character::getWeaponName(void) const
 {
 	static const std::string empty = "";
 
@@ -84,7 +84,7 @@ std::string const	&Character::getWeaponName(void) const
 	return (empty);
 }
 
-std::ostream		&operator<<(std::ostream &os, Character const &ch)
+std::ostream&		operator<<(std::ostream& os, const Character& ch)
 {
 	os << ch.getName() << " has " << ch.getAP() << " AP and ";
 	if (ch.isArmed())

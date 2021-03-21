@@ -8,10 +8,10 @@
 int		main(void)
 {
 	MiningBarge		barge;
-	IAsteroid		*aster = new AsteroKreog();
-	IAsteroid		*comet = new KoalaSteroid();
-	IMiningLaser	*sm1 = new StripMiner();
-	IMiningLaser	*dc1 = new DeepCoreMiner();
+	IAsteroid*		aster = new AsteroKreog();
+	IAsteroid*		comet = new KoalaSteroid();
+	IMiningLaser*	sm1 = new StripMiner();
+	IMiningLaser*	dc1 = new DeepCoreMiner();
 
 	barge.equip(NULL);
 	barge.equip(sm1);

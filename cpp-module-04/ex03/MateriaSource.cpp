@@ -17,7 +17,7 @@ MateriaSource::~MateriaSource()
 		delete (this->storage[i]);
 }
 
-MateriaSource::MateriaSource(MateriaSource const &other)
+MateriaSource::MateriaSource(const MateriaSource& other)
 {
 	int		i = -1;
 
@@ -27,7 +27,7 @@ MateriaSource::MateriaSource(MateriaSource const &other)
 	*this = other;
 }
 
-MateriaSource	&MateriaSource::operator=(MateriaSource const &other)
+MateriaSource&	MateriaSource::operator=(const MateriaSource& other)
 {
 	int		i = -1;
 
@@ -45,7 +45,7 @@ MateriaSource	&MateriaSource::operator=(MateriaSource const &other)
 	return (*this);
 }
 
-void			MateriaSource::learnMateria(AMateria *materia)
+void			MateriaSource::learnMateria(AMateria* materia)
 {
 	int		i = -1;
 
@@ -58,7 +58,7 @@ void			MateriaSource::learnMateria(AMateria *materia)
 	this->known++;
 }
 
-AMateria*		MateriaSource::createMateria(std::string const &type)
+AMateria*		MateriaSource::createMateria(const std::string& type)
 {
 	int		i = -1;
 

@@ -8,12 +8,12 @@ PowerFist::~PowerFist()
 {
 }
 
-PowerFist::PowerFist(PowerFist const &other) : AWeapon("Power Fist", 8, 50)
+PowerFist::PowerFist(const PowerFist& other) : AWeapon("Power Fist", 8, 50)
 {
 	*this = other;
 }
 
-PowerFist		&PowerFist::operator=(PowerFist const &other)
+PowerFist&		PowerFist::operator=(const PowerFist& other)
 {
 	AWeapon::operator=(other);
 	return (*this);

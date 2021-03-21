@@ -9,10 +9,10 @@ class Peon : public Victim {
 private:
 	Peon();
 public:
-	Peon(std::string const &name);
+	Peon(const std::string& name);
 	virtual ~Peon();
-	Peon(Peon const &other);
-	Peon &operator=(Peon const &other);
+	Peon(const Peon& other);
+	Peon&	operator=(const Peon& other);
 
 	void	getPolymorphed(void) const;
 };
