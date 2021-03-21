@@ -14,7 +14,7 @@ ZombieHorde::ZombieHorde(int N)
 	}
 }
 
-ZombieHorde::ZombieHorde(std::string type, int N)
+ZombieHorde::ZombieHorde(const std::string& type, int N)
 {
 	int		i = -1;
 

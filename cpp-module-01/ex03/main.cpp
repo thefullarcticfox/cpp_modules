@@ -4,7 +4,7 @@
 #include "ZombieHorde.hpp"
 #define ZCOUNT 20
 
-void			nukezombienest(void)
+void	nukezombienest(void)
 {
 	ZombieHorde		zhnest("Horde Nest", ZCOUNT);
 
@@ -16,7 +16,7 @@ void			nukezombienest(void)
 
 int		main(void)
 {
-	ZombieHorde	*horde;
+	ZombieHorde* horde;
 
 	std::srand(std::time(NULL));
 	horde = new ZombieHorde(ZCOUNT);

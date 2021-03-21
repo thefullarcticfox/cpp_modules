@@ -8,10 +8,10 @@
 class ZombieHorde {
 private:
 	int			count;
-	Zombie		*zombies;
+	Zombie*		zombies;
 public:
 	ZombieHorde(int N);
-	ZombieHorde(std::string type, int N);
+	ZombieHorde(const std::string& type, int N);
 	~ZombieHorde();
 	void		announce();
 };

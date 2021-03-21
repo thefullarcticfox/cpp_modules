@@ -7,13 +7,15 @@
 
 class Replace {
 private:
-	static void	replacelines(std::ifstream &src, std::ofstream &dst,
-						std::string const &s1, std::string const &s2);
+	static
+	void	replacelines(std::ifstream& src, std::ofstream& dst,
+					const std::string& s1, const std::string& s2);
 public:
 	Replace();
 	~Replace();
-	static void	execute(std::string const &filename,
-						std::string const &s1, std::string const &s2);
+	static
+	void	execute(const std::string& filename,
+					const std::string& s1, const std::string& s2);
 };
 
 #endif

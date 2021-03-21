@@ -2,7 +2,7 @@
 
 Logger::Logger(std::string file) : filename(file)
 {
-	logfile.open(this->filename);
+	logfile.open(this->filename.c_str());
 	if (!(logfile.is_open()))
 		logToConsole(makeLogEntry("Log error: failed to open " + filename +
 									" file to write logs"));
@@ -14,11 +14,11 @@ Logger::~Logger()
 		logfile.close();
 }
 
-std::string		Logger::makeLogEntry(std::string msg)
+std::string		Logger::makeLogEntry(const std::string& msg)
 {
 	std::stringstream	ss;
 	time_t				rawtime;
-	struct tm			*timeinfo;
+	struct tm*			timeinfo;
 
 	time(&rawtime);
 	timeinfo = localtime(&rawtime);
@@ -32,12 +32,12 @@ std::string		Logger::makeLogEntry(std::string msg)
 	return (ss.str());
 }
 
-void			Logger::logToConsole(std::string const msg)
+void			Logger::logToConsole(const std::string& msg)
 {
 	std::cout << msg << std::endl;
 }
 
-void			Logger::logToFile(std::string const msg)
+void			Logger::logToFile(const std::string& msg)
 {
 	if (logfile.is_open())
 	{
@@ -49,10 +49,10 @@ void			Logger::logToFile(std::string const msg)
 							msg.substr(18) + "\" to " + filename + " file"));
 }
 
-void			Logger::log(std::string const &dest, std::string const &message)
+void			Logger::log(const std::string& dest, const std::string& message)
 {
 	std::string	dests[2] = {"console", "file"};
-	void		(Logger::*logfuncs[2])(std::string const) = {
+	void		(Logger::*logfuncs[2])(const std::string&) = {
 		&Logger::logToConsole,
 		&Logger::logToFile
 	};

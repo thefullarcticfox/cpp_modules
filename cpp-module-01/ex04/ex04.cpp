@@ -5,8 +5,8 @@
 int		main(void)
 {
 	std::string		s = "HI THIS IS BRAIN";
-	std::string		*s_ptr = &s;
-	std::string		&s_ref = s;
+	std::string*	s_ptr = &s;
+	std::string&	s_ref = s;
 
 	std::cout << std::setw(33) << "initial string: " << s << std::endl;
 	std::cout << std::setw(33) << "string via pointer to string: " <<

@@ -121,7 +121,7 @@ void	Account::displayStatus(void) const
 void	Account::_displayTimestamp(void)
 {
 	time_t		rawtime;
-	struct tm	*timeinfo;
+	struct tm*	timeinfo;
 
 	time(&rawtime);
 	timeinfo = localtime(&rawtime);

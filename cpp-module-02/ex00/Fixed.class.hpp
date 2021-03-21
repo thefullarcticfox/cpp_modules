@@ -10,8 +10,8 @@ private:
 public:
 	Fixed();								// default constructor
 	~Fixed();								// destructor
-	Fixed(Fixed const &other);				// copy contructor
-	Fixed &operator=(Fixed const &other);	// assignation operator overload
+	Fixed(const Fixed& other);				// copy contructor
+	Fixed&	operator=(const Fixed& other);	// assignation operator overload
 	int					getRawBits(void) const;
 	void				setRawBits(int const raw);
 };

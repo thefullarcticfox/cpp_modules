@@ -4,7 +4,7 @@
 #include <cerrno>
 #include <cstring>
 
-void	readstream(std::istream &is)
+void	readstream(std::istream& is)
 {
 	std::string		tmp;
 
@@ -16,7 +16,7 @@ void	readstream(std::istream &is)
 	}
 }
 
-void	readfile(std::string const &filename)
+void	readfile(const std::string& filename)
 {
 	std::ifstream	ifs(filename.c_str());
 

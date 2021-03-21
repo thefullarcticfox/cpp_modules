@@ -22,13 +22,13 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &other)
+Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
-Fixed			&Fixed::operator=(Fixed const &other)
+Fixed&			Fixed::operator=(const Fixed& other)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->rawvalue = other.rawvalue;
@@ -57,7 +57,7 @@ int				Fixed::toInt(void) const
 	return (rawvalue / (1 << bits));
 }
 
-std::ostream	&operator<<(std::ostream &os, Fixed const &val)
+std::ostream&	operator<<(std::ostream& os, const Fixed& val)
 {
 	os << val.toFloat();
 	return (os);

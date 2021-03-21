@@ -5,7 +5,7 @@ Weapon::Weapon()
 	this->type = "Unknown";
 }
 
-Weapon::Weapon(std::string type)
+Weapon::Weapon(const std::string& type)
 {
 	this->type = type;
 }
@@ -14,7 +14,7 @@ Weapon::~Weapon()
 {
 }
 
-const std::string	&Weapon::getType(void) const
+const std::string&	Weapon::getType(void) const
 {
 	return (this->type);
 }

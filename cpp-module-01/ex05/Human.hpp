@@ -10,8 +10,8 @@ private:
 public:
 	Human();
 	~Human();
-	const Brain	&getBrain(void) const;
-	std::string identify(void);
+	const Brain&	getBrain(void) const;
+	std::string 	identify(void);
 };
 
 #endif

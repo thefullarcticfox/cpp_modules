@@ -8,8 +8,8 @@ Replace::~Replace()
 {
 }
 
-void	Replace::replacelines(std::ifstream &src, std::ofstream &dst,
-						std::string const &s1, std::string const &s2)
+void	Replace::replacelines(std::ifstream& src, std::ofstream& dst,
+						const std::string& s1, const std::string& s2)
 {
 	size_t		found;
 	std::string	tmp;
@@ -28,8 +28,8 @@ void	Replace::replacelines(std::ifstream &src, std::ofstream &dst,
 	}
 }
 
-void	Replace::execute(std::string const &filename,
-						std::string const &s1, std::string const &s2)
+void	Replace::execute(const std::string& filename,
+						const std::string& s1, const std::string& s2)
 {
 	if (s1.empty() || s2.empty())
 	{

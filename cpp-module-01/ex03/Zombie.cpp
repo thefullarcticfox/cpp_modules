@@ -7,7 +7,7 @@ Zombie::Zombie()
 	this->hp = 100;
 }
 
-Zombie::Zombie(std::string name, std::string type)
+Zombie::Zombie(const std::string& name, const std::string& type)
 {
 	this->name = name;
 	this->type = type;
@@ -16,7 +16,7 @@ Zombie::Zombie(std::string name, std::string type)
 		this->hp = 1000;
 }
 
-Zombie::Zombie(std::string type)
+Zombie::Zombie(const std::string& type)
 {
 	this->name = randomname(4 + (std::rand() % 11));
 	this->type = type;
@@ -57,7 +57,7 @@ bool		Zombie::attackbase(void)
 	return (false);
 }
 
-void		Zombie::settype(std::string type)
+void		Zombie::settype(const std::string& type)
 {
 	this->type = type;
 }

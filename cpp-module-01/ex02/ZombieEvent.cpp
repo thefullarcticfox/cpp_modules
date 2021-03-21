@@ -9,19 +9,19 @@ ZombieEvent::~ZombieEvent()
 {
 }
 
-void		ZombieEvent::setZombieType(std::string type)
+void		ZombieEvent::setZombieType(const std::string& type)
 {
 	this->type = type;
 }
 
-Zombie		*ZombieEvent::newZombie(std::string name)
+Zombie*		ZombieEvent::newZombie(const std::string& name)
 {
 	return (new Zombie(name, this->type));
 }
 
-Zombie		*ZombieEvent::randomChump(void)
+Zombie*		ZombieEvent::randomChump(void)
 {
-	Zombie	*z = new Zombie(this->type);
+	Zombie*	z = new Zombie(this->type);
 	z->announce();
 	return (z);
 }

@@ -13,30 +13,30 @@ public:
 	Fixed(const int value);
 	Fixed(const float value);
 	~Fixed();
-	Fixed(Fixed const &other);
+	Fixed(const Fixed& other);
 
-	Fixed				&operator=(Fixed const &other);
+	Fixed&				operator=(const Fixed& other);
 
-	bool				operator>(Fixed const &other) const;
-	bool				operator<(Fixed const &other) const;
-	bool				operator>=(Fixed const &other) const;
-	bool				operator<=(Fixed const &other) const;
-	bool				operator==(Fixed const &other) const;
-	bool				operator!=(Fixed const &other) const;
+	bool				operator>(const Fixed& other) const;
+	bool				operator<(const Fixed& other) const;
+	bool				operator>=(const Fixed& other) const;
+	bool				operator<=(const Fixed& other) const;
+	bool				operator==(const Fixed& other) const;
+	bool				operator!=(const Fixed& other) const;
 
-	Fixed				operator+(Fixed const &other);
-	Fixed				operator-(Fixed const &other);
-	Fixed				operator*(Fixed const &other);
-	Fixed				operator/(Fixed const &other);
-	Fixed				operator++(void);						// ++i;
+	Fixed				operator+(const Fixed& other) const;
+	Fixed				operator-(const Fixed& other) const;
+	Fixed				operator*(const Fixed& other) const;
+	Fixed				operator/(const Fixed& other) const;
+	Fixed&				operator++(void);						// ++i;
 	Fixed				operator++(int);						// i++;
-	Fixed				operator--(void);
+	Fixed&				operator--(void);
 	Fixed				operator--(int);
 
-	static Fixed		&min(Fixed &v1, Fixed &v2);
-	static Fixed const	&min(Fixed const &v1, Fixed const &v2);
-	static Fixed		&max(Fixed &v1, Fixed &v2);
-	static Fixed const	&max(Fixed const &v1, Fixed const &v2);
+	static Fixed&		min(Fixed& v1, Fixed& v2);
+	static const Fixed&	min(const Fixed& v1, const Fixed& v2);
+	static Fixed&		max(Fixed& v1, Fixed& v2);
+	static const Fixed&	max(const Fixed& v1, const Fixed& v2);
 
 	int					getRawBits(void) const;
 	void				setRawBits(int const raw);
@@ -44,11 +44,11 @@ public:
 	int					toInt(void) const;
 };
 
-std::ostream			&operator<<(std::ostream &os, Fixed const &val);
+std::ostream&			operator<<(std::ostream& os, const Fixed& val);
 
-Fixed					&min(Fixed &f1, Fixed &f2);
-Fixed const				&min(Fixed const &v1, Fixed const &v2);
-Fixed					&max(Fixed &f1, Fixed &f2);
-Fixed const				&max(Fixed const &v1, Fixed const &v2);
+Fixed&					min(Fixed& f1, Fixed& f2);
+const Fixed&			min(const Fixed& v1, const Fixed& v2);
+Fixed&					max(Fixed& f1, Fixed& f2);
+const Fixed&			max(const Fixed& v1, const Fixed& v2);
 
 #endif

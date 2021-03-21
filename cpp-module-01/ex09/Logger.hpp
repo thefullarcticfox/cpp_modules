@@ -12,13 +12,13 @@ class Logger {
 private:
 	std::string		filename;
 	std::ofstream	logfile;
-	std::string		makeLogEntry(std::string msg);
-	void			logToConsole(std::string msg);
-	void			logToFile(std::string msg);
+	std::string		makeLogEntry(const std::string& msg);
+	void			logToConsole(const std::string& msg);
+	void			logToFile(const std::string& msg);
 public:
 	Logger(std::string file);
 	~Logger();
-	void			log(std::string const &dest, std::string const &message);
+	void			log(const std::string& dest, const std::string& message);
 };
 
 #endif

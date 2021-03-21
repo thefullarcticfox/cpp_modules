@@ -4,7 +4,7 @@
 
 void	ponyOnTheHeap(void)
 {
-	Pony	*pony = new Pony("Heapony");
+	Pony*	pony = new Pony("Heapony");
 
 	pony->live();
 	pony->printinfo();

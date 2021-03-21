@@ -10,15 +10,16 @@ private:
 	std::string	name;
 	std::string	type;
 	int			hp;
+	static
 	std::string	randomname(int len);
 public:
 	Zombie();
-	Zombie(std::string name, std::string type);
-	Zombie(std::string type);
+	Zombie(const std::string& name, const std::string& type);
+	Zombie(const std::string& type);
 	~Zombie();
 	void		announce(void);
 	bool		attackbase(void);
-	void		settype(std::string type);
+	void		settype(const std::string& type);
 };
 
 #endif

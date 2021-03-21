@@ -36,7 +36,7 @@ int				main(void)
 {
 	ZombieEvent		infected;
 	ZombieEvent		tanks;
-	Zombie			*zhorde[ZCOUNT];
+	Zombie*			zhorde[ZCOUNT];
 	int				i = -1;
 	int				j = 0;
 

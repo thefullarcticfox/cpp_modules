@@ -1,6 +1,6 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(const std::string& name)
 {
 	this->name = name;
 }
@@ -14,7 +14,7 @@ void	HumanB::attack(void)
 	std::cout << name << " attacks with his " << weapon->getType() << std::endl;
 }
 
-void	HumanB::setWeapon(Weapon &weapon)
+void	HumanB::setWeapon(Weapon& weapon)
 {
 	this->weapon = &weapon;
 }

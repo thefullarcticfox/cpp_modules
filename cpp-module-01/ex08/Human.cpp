@@ -1,24 +1,24 @@
 #include "Human.hpp"
 
-void	Human::meleeAttack(std::string const &target)
+void	Human::meleeAttack(const std::string& target)
 {
 	std::cout << "Melee attack on " << target << std::endl;
 }
 
-void	Human::rangedAttack(std::string const &target)
+void	Human::rangedAttack(const std::string& target)
 {
 	std::cout << "Ranged attack on " << target << std::endl;
 }
 
-void	Human::intimidatingShout(std::string const &target)
+void	Human::intimidatingShout(const std::string& target)
 {
 	std::cout << "Shouting at " << target << std::endl;
 }
 
-void	Human::action(std::string const &action_name, std::string const &target)
+void	Human::action(const std::string& action_name, const std::string& target)
 {
 	std::string	names[3] = {"melee", "ranged", "shout"};
-	void		(Human::*actions[3])(std::string const &) = {
+	void		(Human::*actions[3])(const std::string&) = {
 		&Human::meleeAttack,
 		&Human::rangedAttack,
 		&Human::intimidatingShout
