@@ -4,8 +4,8 @@
 
 int		main(void)
 {
-	FragTrap	*frag;
-	ScavTrap	*scav;
+	FragTrap*	frag;
+	ScavTrap*	scav;
 
 	std::srand(std::time(NULL));
 	frag = new FragTrap("Charles");

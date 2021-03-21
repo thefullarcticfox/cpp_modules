@@ -6,10 +6,10 @@
 
 int		main(void)
 {
-	FragTrap	*frag;
-	ScavTrap	*scav;
-	NinjaTrap	*ninja;
-	SuperTrap	*super;
+	FragTrap*	frag;
+	ScavTrap*	scav;
+	NinjaTrap*	ninja;
+	SuperTrap*	super;
 
 	std::srand(std::time(NULL));
 	frag = new FragTrap("Thomas");
