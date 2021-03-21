@@ -20,7 +20,7 @@ MutantStack<T>::MutantStack(const MutantStack<T>& other) : std::stack<T>()
 }
 
 template<class T>
-MutantStack<T>		&MutantStack<T>::operator=(const MutantStack<T>& other)
+MutantStack<T>&		MutantStack<T>::operator=(const MutantStack<T>& other)
 {
 	this->c = other.c;
 	return (*this);

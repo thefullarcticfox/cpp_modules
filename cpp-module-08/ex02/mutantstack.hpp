@@ -9,7 +9,7 @@ public:
 	MutantStack();
 	virtual ~MutantStack();
 	MutantStack(const MutantStack<T>& other);
-	MutantStack<T> &operator=(const MutantStack<T>& other);
+	MutantStack<T>&	operator=(const MutantStack<T>& other);
 
 	typedef typename std::stack<T>::container_type::iterator
 		iterator;

@@ -7,7 +7,7 @@
 int		main(void)
 {
 	Array<int>		a(10);
-	Array<int>		*b = new Array<int>();
+	Array<int>*		b = new Array<int>();
 	Array<char>		c(42);
 	int				i = 0;
 
@@ -79,7 +79,7 @@ int		main(void)
 	std::cout << std::endl;
 
 	// empty array test
-	Array<std::string>	*empty = new Array<std::string>();
+	Array<std::string>*	empty = new Array<std::string>();
 	delete (empty);
 
 	return (0);
