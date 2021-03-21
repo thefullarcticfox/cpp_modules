@@ -5,7 +5,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() :
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) :
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) :
 	Form("Shrubbery Creation", 145, 137)
 {
 	this->setTarget(target);
@@ -16,19 +16,19 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(
-	ShrubberyCreationForm const &other) : Form(other.getName(), 145, 137)
+	const ShrubberyCreationForm& other) : Form(other.getName(), 145, 137)
 {
 	*this = other;
 }
 
-ShrubberyCreationForm
-	&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &other)
+ShrubberyCreationForm&
+		ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other)
 {
 	this->setTarget(other.getTarget());
 	return (*this);
 }
 
-void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+void	ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
 	Form::execute(executor);
 	std::ofstream	dst((this->getTarget() + "_shrubbery").c_str());
@@ -51,7 +51,7 @@ void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		throw (ShrubberyCreationForm::FileWriteFailureException());
 }
 
-const char	*ShrubberyCreationForm::FileWriteFailureException::what()
+const char*	ShrubberyCreationForm::FileWriteFailureException::what()
 	const throw()
 {
 	return ("Cannot write a shrubbery file");
@@ -62,13 +62,14 @@ ShrubberyCreationForm::FileWriteFailureException::FileWriteFailureException() {}
 ShrubberyCreationForm::FileWriteFailureException::~FileWriteFailureException() throw() {}
 
 ShrubberyCreationForm::FileWriteFailureException::FileWriteFailureException(
-	ShrubberyCreationForm::FileWriteFailureException const &other)
+	const ShrubberyCreationForm::FileWriteFailureException& other)
 {
 	*this = other;
 }
 
-ShrubberyCreationForm::FileWriteFailureException &ShrubberyCreationForm::FileWriteFailureException::operator=(
-	ShrubberyCreationForm::FileWriteFailureException const &other)
+ShrubberyCreationForm::FileWriteFailureException&
+	ShrubberyCreationForm::FileWriteFailureException::operator=(
+	const ShrubberyCreationForm::FileWriteFailureException& other)
 {
 	(void)other;
 	return (*this);

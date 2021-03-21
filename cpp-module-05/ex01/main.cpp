@@ -10,7 +10,7 @@ int		main(void)
 	{
 		Form		form("F29A", 0, 4);
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -18,7 +18,7 @@ int		main(void)
 	{
 		Form		form("F29A", 1, 151);
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -36,7 +36,7 @@ int		main(void)
 		std::cout << form << std::endl;
 		josh.signForm(form);
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

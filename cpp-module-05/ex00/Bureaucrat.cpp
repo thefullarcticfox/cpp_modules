@@ -4,7 +4,7 @@ Bureaucrat::Bureaucrat()
 {
 }
 
-Bureaucrat::Bureaucrat(std::string const &name, int grade) :
+Bureaucrat::Bureaucrat(const std::string& name, int grade) :
 	name(name), grade(grade)
 {
 	if (this->grade < 1)
@@ -17,24 +17,24 @@ Bureaucrat::~Bureaucrat()
 {
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &other) :
+Bureaucrat::Bureaucrat(const Bureaucrat& other) :
 	name(other.name), grade(other.grade)
 {
 	*this = other;
 }
 
-Bureaucrat			&Bureaucrat::operator=(Bureaucrat const &other)
+Bureaucrat&			Bureaucrat::operator=(const Bureaucrat& other)
 {
 	this->grade = other.grade;
 	return (*this);
 }
 
-std::string const	&Bureaucrat::getName(void) const
+const std::string&	Bureaucrat::getName(void) const
 {
 	return (this->name);
 }
 
-int const			&Bureaucrat::getGrade(void) const
+int					Bureaucrat::getGrade(void) const
 {
 	return (this->grade);
 }
@@ -53,19 +53,19 @@ void				Bureaucrat::downGrade(void)
 	this->grade++;
 }
 
-std::ostream		&operator<<(std::ostream &os, Bureaucrat const &bur)
+std::ostream&		operator<<(std::ostream& os, const Bureaucrat& bur)
 {
 	os << "Bureaucrat " << bur.getName() << " (Grade " <<
 		bur.getGrade() << ")";
 	return (os);
 }
 
-const char			*Bureaucrat::GradeTooHighException::what() const throw()
+const char*			Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Bureaucrat's grade is too high to create or upgrade");
 }
 
-const char			*Bureaucrat::GradeTooLowException::what() const throw()
+const char*			Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Bureaucrat's grade is too low to create or downgrade");
 }
@@ -75,13 +75,13 @@ Bureaucrat::GradeTooHighException::GradeTooHighException() {}
 Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {}
 
 Bureaucrat::GradeTooHighException::GradeTooHighException(
-	Bureaucrat::GradeTooHighException const &other)
+	const Bureaucrat::GradeTooHighException& other)
 {
 	*this = other;
 }
 
-Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(
-	Bureaucrat::GradeTooHighException const &other)
+Bureaucrat::GradeTooHighException&	Bureaucrat::GradeTooHighException::operator=(
+	const Bureaucrat::GradeTooHighException& other)
 {
 	(void)other;
 	return (*this);
@@ -92,13 +92,13 @@ Bureaucrat::GradeTooLowException::GradeTooLowException() {}
 Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
 
 Bureaucrat::GradeTooLowException::GradeTooLowException(
-	Bureaucrat::GradeTooLowException const &other)
+	const Bureaucrat::GradeTooLowException& other)
 {
 	*this = other;
 }
 
-Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::operator=(
-	Bureaucrat::GradeTooLowException const &other)
+Bureaucrat::GradeTooLowException&	Bureaucrat::GradeTooLowException::operator=(
+	const Bureaucrat::GradeTooLowException& other)
 {
 	(void)other;
 	return (*this);

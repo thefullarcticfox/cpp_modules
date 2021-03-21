@@ -10,10 +10,10 @@
 int		main(void)
 {
 	Intern		someRandomIntern;
-	Form		*form1 = NULL;
-	Form		*form2 = NULL;
-	Form		*form3 = NULL;
-	Form		*noform = NULL;
+	Form*	form1 = NULL;
+	Form*	form2 = NULL;
+	Form*	form3 = NULL;
+	Form*	noform = NULL;
 
 	std::srand(std::time(NULL));
 	try
@@ -76,7 +76,7 @@ int		main(void)
 
 		noform = someRandomIntern.makeForm("random form thingy", "test");
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

@@ -11,50 +11,47 @@ Intern::~Intern()
 {
 }
 
-Intern::Intern(Intern const &other)
+Intern::Intern(const Intern& other)
 {
 	*this = other;
 }
 
-Intern		&Intern::operator=(Intern const &other)
+Intern&		Intern::operator=(const Intern& other)
 {
 	(void)other;
 	return (*this);
 }
 
-Form		*Intern::makePresidentialPardon(std::string const &target)
+Form*		Intern::makePresidentialPardon(const std::string& target)
 {
-	Form	*form = new PresidentialPardonForm(target);
-	return (form);
+	return (new PresidentialPardonForm(target));
 }
 
-Form		*Intern::makeRobotomyRequest(std::string const &target)
+Form*		Intern::makeRobotomyRequest(const std::string& target)
 {
-	Form	*form = new RobotomyRequestForm(target);
-	return (form);
+	return (new RobotomyRequestForm(target));
 }
 
-Form		*Intern::makeShrubberyCreation(std::string const &target)
+Form*		Intern::makeShrubberyCreation(const std::string& target)
 {
-	Form	*form = new ShrubberyCreationForm(target);
-	return (form);
+	return (new ShrubberyCreationForm(target));
 }
 
-Form		*Intern::makeForm(std::string const &form,
-	std::string const &target)
+Form*		Intern::makeForm(const std::string& form,
+	const std::string& target)
 {
 	std::string	formnames[3] = {
 		"presidential pardon",
 		"robotomy request",
 		"shrubbery creation"
 	};
-	Form		*(Intern::*forms[3])(std::string const &) = {
+	Form		*(Intern::*forms[3])(const std::string& ) = {
 		&Intern::makePresidentialPardon,
 		&Intern::makeRobotomyRequest,
 		&Intern::makeShrubberyCreation
 	};
 	int			i = -1;
-	Form		*formptr = NULL;
+	Form*		formptr = NULL;
 
 	while (++i < 3)
 		if (formnames[i].compare(form) == 0)
@@ -66,7 +63,7 @@ Form		*Intern::makeForm(std::string const &form,
 	return (formptr);
 }
 
-const char	*Intern::FormNotFoundException::what() const throw()
+const char*	Intern::FormNotFoundException::what() const throw()
 {
 	return ("Form requested does not exist");
 }
@@ -76,13 +73,13 @@ Intern::FormNotFoundException::FormNotFoundException() {}
 Intern::FormNotFoundException::~FormNotFoundException() throw() {}
 
 Intern::FormNotFoundException::FormNotFoundException(
-	Intern::FormNotFoundException const &other)
+	const Intern::FormNotFoundException& other)
 {
 	*this = other;
 }
 
-Intern::FormNotFoundException &Intern::FormNotFoundException::operator=(
-	Intern::FormNotFoundException const &other)
+Intern::FormNotFoundException&	Intern::FormNotFoundException::operator=(
+	const Intern::FormNotFoundException& other)
 {
 	(void)other;
 	return (*this);

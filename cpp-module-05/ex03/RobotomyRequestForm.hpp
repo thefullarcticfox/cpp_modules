@@ -11,12 +11,12 @@ class RobotomyRequestForm : public Form {
 private:
 	RobotomyRequestForm();
 public:
-	RobotomyRequestForm(std::string const &target);
+	RobotomyRequestForm(const std::string& target);
 	virtual ~RobotomyRequestForm();
-	RobotomyRequestForm(RobotomyRequestForm const &other);
-	RobotomyRequestForm &operator=(RobotomyRequestForm const &other);
+	RobotomyRequestForm(const RobotomyRequestForm& other);
+	RobotomyRequestForm&	operator=(const RobotomyRequestForm& other);
 
-	void			execute(Bureaucrat const &executor) const;
+	void			execute(const Bureaucrat& executor) const;
 };
 
 #endif

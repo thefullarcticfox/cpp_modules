@@ -9,7 +9,7 @@ int		main(void)
 	{
 		Bureaucrat	josh("Josh", 151);
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -18,7 +18,7 @@ int		main(void)
 	{
 		Bureaucrat	josh("Josh", 0);
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -34,7 +34,7 @@ int		main(void)
 			std::cout << josh << std::endl;
 		}
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -50,7 +50,7 @@ int		main(void)
 			std::cout << josh2 << std::endl;
 		}
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

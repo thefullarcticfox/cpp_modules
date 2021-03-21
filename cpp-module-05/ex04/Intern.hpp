@@ -8,25 +8,25 @@
 
 class Intern {
 private:
-	Form	*makePresidentialPardon(std::string const &target);
-	Form	*makeRobotomyRequest(std::string const &target);
-	Form	*makeShrubberyCreation(std::string const &target);
+	Form*	makePresidentialPardon(const std::string& target);
+	Form*	makeRobotomyRequest(const std::string& target);
+	Form*	makeShrubberyCreation(const std::string& target);
 public:
 	Intern();
 	virtual ~Intern();
-	Intern(Intern const &other);
-	Intern &operator=(Intern const &other);
+	Intern(const Intern& other);
+	Intern&	operator=(const Intern& other);
 
-	Form	*makeForm(std::string const &form, std::string const &target);
+	Form*	makeForm(const std::string& form, const std::string& target);
 
 	class FormNotFoundException : public std::exception {
 	public:
 		FormNotFoundException();
 		virtual ~FormNotFoundException() throw();
-		FormNotFoundException(FormNotFoundException const &other);
-		FormNotFoundException &operator=(FormNotFoundException const &other);
+		FormNotFoundException(const FormNotFoundException& other);
+		FormNotFoundException&	operator=(const FormNotFoundException& other);
 
-		virtual const char	*what() const throw();
+		virtual const char*	what() const throw();
 	};
 };
 

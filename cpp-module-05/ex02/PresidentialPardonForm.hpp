@@ -10,12 +10,12 @@ class PresidentialPardonForm : public Form {
 private:
 	PresidentialPardonForm();
 public:
-	PresidentialPardonForm(std::string const &target);
+	PresidentialPardonForm(const std::string& target);
 	virtual ~PresidentialPardonForm();
-	PresidentialPardonForm(PresidentialPardonForm const &other);
-	PresidentialPardonForm &operator=(PresidentialPardonForm const &other);
+	PresidentialPardonForm(const PresidentialPardonForm& other);
+	PresidentialPardonForm&	operator=(const PresidentialPardonForm& other);
 
-	void			execute(Bureaucrat const &executor) const;
+	void			execute(const Bureaucrat& executor) const;
 };
 
 #endif

@@ -5,7 +5,7 @@ RobotomyRequestForm::RobotomyRequestForm() :
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string const &target) :
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target) :
 	Form("Robotomy Request", 72, 45)
 {
 	this->setTarget(target);
@@ -16,19 +16,19 @@ RobotomyRequestForm::~RobotomyRequestForm()
 }
 
 RobotomyRequestForm::RobotomyRequestForm(
-	RobotomyRequestForm const &other) : Form(other.getName(), 72, 45)
+	const RobotomyRequestForm& other) : Form(other.getName(), 72, 45)
 {
 	*this = other;
 }
 
-RobotomyRequestForm
-		&RobotomyRequestForm::operator=(RobotomyRequestForm const &other)
+RobotomyRequestForm&
+		RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
 {
 	this->setTarget(other.getTarget());
 	return (*this);
 }
 
-void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
+void	RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
 	Form::execute(executor);
 	std::cout << "* VRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRM *" << std::endl;

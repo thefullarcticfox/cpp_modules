@@ -11,9 +11,9 @@
 
 int		main(void)
 {
-	Form		*form1 = NULL;
-	Form		*form2 = NULL;
-	Form		*form3 = NULL;
+	Form*	form1 = NULL;
+	Form*	form2 = NULL;
+	Form*	form3 = NULL;
 
 	std::srand(std::time(NULL));
 	try
@@ -72,7 +72,7 @@ int		main(void)
 		std::cout << josh << std::endl;
 		josh.executeForm(*form3);
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

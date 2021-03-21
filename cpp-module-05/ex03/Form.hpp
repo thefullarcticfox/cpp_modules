@@ -16,76 +16,76 @@ private:
 	std::string 		target;
 	Form();
 public:
-	Form(std::string const &name, int signgrade, int const execgrade);
+	Form(const std::string& name, int signgrade, int const execgrade);
 	virtual ~Form();
-	Form(Form const &other);
-	Form &operator=(Form const &other);
+	Form(const Form& other);
+	Form&				operator=(const Form& other);
 
-	std::string const	&getName(void) const;
-	std::string const	&getTarget(void) const;
-	void				setTarget(std::string const &target);
+	const std::string&	getName(void) const;
+	const std::string&	getTarget(void) const;
+	void				setTarget(const std::string& target);
 	int					getSignGrade(void) const;
 	int					getExecGrade(void) const;
 	bool				isSigned(void) const;
-	void				beSigned(Bureaucrat const &bur);
-	virtual void		execute(Bureaucrat const &executor) const = 0;
+	void				beSigned(const Bureaucrat& bur);
+	virtual void		execute(const Bureaucrat& executor) const = 0;
 
 	class GradeTooHighException : public std::exception {
 	public:
 		GradeTooHighException();
 		virtual ~GradeTooHighException() throw();
-		GradeTooHighException(GradeTooHighException const &other);
-		GradeTooHighException &operator=(GradeTooHighException const &other);
+		GradeTooHighException(const GradeTooHighException& other);
+		GradeTooHighException&	operator=(const GradeTooHighException& other);
 
-		virtual const char	*what() const throw();
+		virtual const char*	what() const throw();
 	};
 	class GradeTooLowException : public std::exception {
 	public:
 		GradeTooLowException();
 		virtual ~GradeTooLowException() throw();
-		GradeTooLowException(GradeTooLowException const &other);
-		GradeTooLowException &operator=(GradeTooLowException const &other);
+		GradeTooLowException(const GradeTooLowException& other);
+		GradeTooLowException&	operator=(const GradeTooLowException& other);
 
-		virtual const char	*what() const throw();
+		virtual const char*	what() const throw();
 	};
 	class AlreadySignedException : public std::exception {
 	public:
 		AlreadySignedException();
 		virtual ~AlreadySignedException() throw();
-		AlreadySignedException(AlreadySignedException const &other);
-		AlreadySignedException &operator=(AlreadySignedException const &other);
+		AlreadySignedException(const AlreadySignedException& other);
+		AlreadySignedException&	operator=(const AlreadySignedException& other);
 
-		virtual const char	*what() const throw();
+		virtual const char*	what() const throw();
 	};
 	class GradeTooLowToSignException : public std::exception {
 	public:
 		GradeTooLowToSignException();
 		virtual ~GradeTooLowToSignException() throw();
-		GradeTooLowToSignException(GradeTooLowToSignException const &other);
-		GradeTooLowToSignException &operator=(GradeTooLowToSignException const &other);
+		GradeTooLowToSignException(const GradeTooLowToSignException& other);
+		GradeTooLowToSignException&	operator=(const GradeTooLowToSignException& other);
 
-		virtual const char	*what() const throw();
+		virtual const char*	what() const throw();
 	};
 	class GradeTooLowToExecuteException : public std::exception {
 	public:
 		GradeTooLowToExecuteException();
 		virtual ~GradeTooLowToExecuteException() throw();
-		GradeTooLowToExecuteException(GradeTooLowToExecuteException const &other);
-		GradeTooLowToExecuteException &operator=(GradeTooLowToExecuteException const &other);
+		GradeTooLowToExecuteException(const GradeTooLowToExecuteException& other);
+		GradeTooLowToExecuteException&	operator=(const GradeTooLowToExecuteException& other);
 
-		virtual const char	*what() const throw();
+		virtual const char*	what() const throw();
 	};
 	class NotSignedException : public std::exception {
 	public:
 		NotSignedException();
 		virtual ~NotSignedException() throw();
-		NotSignedException(NotSignedException const &other);
-		NotSignedException &operator=(NotSignedException const &other);
+		NotSignedException(const NotSignedException& other);
+		NotSignedException&	operator=(const NotSignedException& other);
 
-		virtual const char	*what() const throw();
+		virtual const char*	what() const throw();
 	};
 };
 
-std::ostream			&operator<<(std::ostream &os, Form const &bur);
+std::ostream&		operator<<(std::ostream& os, const Form& bur);
 
 #endif

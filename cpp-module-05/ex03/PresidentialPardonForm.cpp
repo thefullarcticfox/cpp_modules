@@ -5,7 +5,7 @@ PresidentialPardonForm::PresidentialPardonForm() :
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string const &target) :
+PresidentialPardonForm::PresidentialPardonForm(const std::string& target) :
 	Form("President Pardon", 25, 5)
 {
 	this->setTarget(target);
@@ -16,19 +16,19 @@ PresidentialPardonForm::~PresidentialPardonForm()
 }
 
 PresidentialPardonForm::PresidentialPardonForm(
-	PresidentialPardonForm const &other) : Form(other.getName(), 25, 5)
+	const PresidentialPardonForm& other) : Form(other.getName(), 25, 5)
 {
 	*this = other;
 }
 
-PresidentialPardonForm
-		&PresidentialPardonForm::operator=(PresidentialPardonForm const &other)
+PresidentialPardonForm&
+		PresidentialPardonForm::operator=(const PresidentialPardonForm& other)
 {
 	this->setTarget(other.getTarget());
 	return (*this);
 }
 
-void	PresidentialPardonForm::execute(Bureaucrat const &executor) const
+void	PresidentialPardonForm::execute(const Bureaucrat& executor) const
 {
 	Form::execute(executor);
 	std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox." <<

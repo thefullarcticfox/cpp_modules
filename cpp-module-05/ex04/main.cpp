@@ -22,7 +22,7 @@ int		main(void)
 	{
 		ob.doBureaucracy("robotomy request", "Bender");
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -32,7 +32,7 @@ int		main(void)
 	{
 		ob.doBureaucracy("robotomy request", "Bender");
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -41,7 +41,7 @@ int		main(void)
 	{
 		ob.doBureaucracy("shrubbery creation", "home");
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -50,7 +50,7 @@ int		main(void)
 	{
 		ob.doBureaucracy("presidential pardon", "Dude");
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -63,7 +63,7 @@ int		main(void)
 	{
 		ob.doBureaucracy("presidential pardon", "Dude");
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -76,7 +76,7 @@ int		main(void)
 	{
 		ob.doBureaucracy("presidential pardon", "Dude");
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -85,7 +85,7 @@ int		main(void)
 	{
 		ob.doBureaucracy("some unexisting form", "a");
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

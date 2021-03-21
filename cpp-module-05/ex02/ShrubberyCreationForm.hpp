@@ -11,21 +11,21 @@ class ShrubberyCreationForm : public Form {
 private:
 	ShrubberyCreationForm();
 public:
-	ShrubberyCreationForm(std::string const &target);
+	ShrubberyCreationForm(const std::string& target);
 	virtual ~ShrubberyCreationForm();
-	ShrubberyCreationForm(ShrubberyCreationForm const &other);
-	ShrubberyCreationForm &operator=(ShrubberyCreationForm const &other);
+	ShrubberyCreationForm(const ShrubberyCreationForm& other);
+	ShrubberyCreationForm&	operator=(const ShrubberyCreationForm& other);
 
-	void			execute(Bureaucrat const &executor) const;
+	void			execute(const Bureaucrat& executor) const;
 
 	class FileWriteFailureException : public std::exception {
 	public:
 		FileWriteFailureException();
 		virtual ~FileWriteFailureException() throw();
-		FileWriteFailureException(FileWriteFailureException const &other);
-		FileWriteFailureException &operator=(FileWriteFailureException const &other);
+		FileWriteFailureException(const FileWriteFailureException& other);
+		FileWriteFailureException&	operator=(const FileWriteFailureException& other);
 
-		virtual const char	*what() const throw();
+		virtual const char*		what() const throw();
 	};
 };
 
