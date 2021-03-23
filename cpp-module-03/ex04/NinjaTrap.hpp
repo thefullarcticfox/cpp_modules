@@ -9,6 +9,13 @@
 
 class NinjaTrap : public virtual ClapTrap {
 protected:
+	static const int	init_hp = 60;
+	static const int	init_maxhp = 60;
+	static const int	init_ep = 120;
+	static const int	init_maxep = 120;
+	static const int	init_mdmg = 60;
+	static const int	init_rdmg = 5;
+	static const int	init_armor = 0;
 	NinjaTrap();
 public:
 	NinjaTrap(const std::string& name);

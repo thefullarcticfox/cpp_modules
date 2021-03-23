@@ -8,14 +8,14 @@ SuperTrap::SuperTrap(const std::string& name) : ClapTrap(name),
 	FragTrap(name), NinjaTrap(name)
 {
 	this->type = "SUP3R-TP";
-	this->hp = 100;								// FragTrap::hp;
-	this->max_hp = 100;							// FragTrap::max_hp;
-	this->ep = 120;								// NinjaTrap::ep;
-	this->max_ep = 120;							// NinjaTrap::max_ep;
-	this->level = 1;
-	this->melee_dmg = 60;						// NinjaTrap::melee_dmg;
-	this->ranged_dmg = 20;						// FragTrap::ranged_dmg;
-	this->armor = 5;							// FragTrap::armor;
+	this->hp =			FragTrap::init_hp;			// FragTrap::hp;
+	this->max_hp =		FragTrap::init_maxhp;		// FragTrap::max_hp;
+	this->ep =			NinjaTrap::init_ep;			// NinjaTrap::ep;
+	this->max_ep =		NinjaTrap::init_maxep;		// NinjaTrap::max_ep;
+	this->level =		1;
+	this->melee_dmg =	NinjaTrap::init_mdmg;		// NinjaTrap::melee_dmg;
+	this->ranged_dmg =	FragTrap::init_rdmg;		// FragTrap::ranged_dmg;
+	this->armor =		FragTrap::init_armor;		// FragTrap::armor;
 	std::cout << type << " " << name <<
 		" says: \"Shouldn't you be murdering something about now?\"" <<
 		std::endl;
