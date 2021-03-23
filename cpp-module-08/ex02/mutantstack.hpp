@@ -2,24 +2,25 @@
 # define MUTANTSTACK_HPP
 
 # include <stack>
+# include <deque>
 
-template<class T>
-class MutantStack : public std::stack<T> {
+template< class T, class Container = std::deque<T> >
+class MutantStack : public std::stack<T, Container> {
 public:
-	MutantStack();
+	MutantStack(const Container& ctnr = Container());
 	virtual ~MutantStack();
-	MutantStack(const MutantStack<T>& other);
-	MutantStack<T>&	operator=(const MutantStack<T>& other);
+	MutantStack(const MutantStack<T, Container>& other);
+	MutantStack<T, Container>&	operator=(const MutantStack<T, Container>& other);
 
-	typedef typename std::stack<T>::container_type::iterator
+	typedef typename std::stack<T, Container>::container_type::iterator
 		iterator;
-	typedef typename std::stack<T>::container_type::const_iterator
+	typedef typename std::stack<T, Container>::container_type::const_iterator
 		const_iterator;
-	typedef typename std::stack<T>::container_type::reverse_iterator
+	typedef typename std::stack<T, Container>::container_type::reverse_iterator
 		reverse_iterator;
-    typedef typename std::stack<T>::container_type::const_reverse_iterator
+    typedef typename std::stack<T, Container>::container_type::const_reverse_iterator
 		const_reverse_iterator;
-	typedef typename std::stack<T>::container_type::difference_type
+	typedef typename std::stack<T, Container>::container_type::difference_type
 		difference_type;
 
 	iterator				begin(void);

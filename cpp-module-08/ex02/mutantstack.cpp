@@ -3,73 +3,73 @@
 
 # include "mutantstack.hpp"
 
-template<class T>
-MutantStack<T>::MutantStack() : std::stack<T>()
+template<class T, class Container>
+MutantStack<T, Container>::MutantStack(const Container& ctnr) : std::stack<T, Container>(ctnr)
 {
 }
 
-template<class T>
-MutantStack<T>::~MutantStack()
+template<class T, class Container>
+MutantStack<T, Container>::~MutantStack()
 {
 }
 
-template<class T>
-MutantStack<T>::MutantStack(const MutantStack<T>& other) : std::stack<T>()
+template<class T, class Container>
+MutantStack<T, Container>::MutantStack(const MutantStack<T, Container>& other) : std::stack<T, Container>()
 {
 	*this = other;
 }
 
-template<class T>
-MutantStack<T>&		MutantStack<T>::operator=(const MutantStack<T>& other)
+template<class T, class Container>
+MutantStack<T, Container>&	MutantStack<T, Container>::operator=(const MutantStack<T, Container>& other)
 {
 	this->c = other.c;
 	return (*this);
 }
 
-template<class T>
-typename MutantStack<T>::iterator				MutantStack<T>::begin(void)
+template<class T, class Container>
+typename MutantStack<T, Container>::iterator				MutantStack<T, Container>::begin(void)
 {
 	return (this->c.begin());
 }
 
-template<class T>
-typename MutantStack<T>::iterator				MutantStack<T>::end(void)
+template<class T, class Container>
+typename MutantStack<T, Container>::iterator				MutantStack<T, Container>::end(void)
 {
 	return (this->c.end());
 }
 
-template<class T>
-typename MutantStack<T>::const_iterator			MutantStack<T>::begin(void) const
+template<class T, class Container>
+typename MutantStack<T, Container>::const_iterator			MutantStack<T, Container>::begin(void) const
 {
 	return (this->c.begin());
 }
 
-template<class T>
-typename MutantStack<T>::const_iterator			MutantStack<T>::end(void) const
+template<class T, class Container>
+typename MutantStack<T, Container>::const_iterator			MutantStack<T, Container>::end(void) const
 {
 	return (this->c.end());
 }
 
-template<class T>
-typename MutantStack<T>::reverse_iterator		MutantStack<T>::rbegin(void)
+template<class T, class Container>
+typename MutantStack<T, Container>::reverse_iterator		MutantStack<T, Container>::rbegin(void)
 {
 	return (this->c.rbegin());
 }
 
-template<class T>
-typename MutantStack<T>::reverse_iterator		MutantStack<T>::rend(void)
+template<class T, class Container>
+typename MutantStack<T, Container>::reverse_iterator		MutantStack<T, Container>::rend(void)
 {
 	return (this->c.rend());
 }
 
-template<class T>
-typename MutantStack<T>::const_reverse_iterator	MutantStack<T>::rbegin(void) const
+template<class T, class Container>
+typename MutantStack<T, Container>::const_reverse_iterator	MutantStack<T, Container>::rbegin(void) const
 {
 	return (this->c.rbegin());
 }
 
-template<class T>
-typename MutantStack<T>::const_reverse_iterator	MutantStack<T>::rend(void) const
+template<class T, class Container>
+typename MutantStack<T, Container>::const_reverse_iterator	MutantStack<T, Container>::rend(void) const
 {
 	return (this->c.rend());
 }
