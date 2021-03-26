@@ -7,7 +7,7 @@
 class NinjaTrap;
 # include "NinjaTrap.hpp"
 
-class SuperTrap : public virtual FragTrap, public virtual NinjaTrap {
+class SuperTrap : public FragTrap, public NinjaTrap {
 private:
 	SuperTrap();
 public:
