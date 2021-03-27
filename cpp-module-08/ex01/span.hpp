@@ -19,7 +19,7 @@ public:
 
 	void				addNumber(int num);
 	template<typename Iter>
-	void				addNumberRange(Iter first, Iter last)
+	void				addNumber(Iter first, Iter last)
 	{
 		if (std::distance(first, last) < 0)
 			throw (Span::BadIteratorRangeException());

@@ -28,7 +28,7 @@ int		main(void)
 		vect.push_back(std::rand());
 	vect[0] = -2147483648;
 	vect[25599] = 2147483647;
-	sp2.addNumberRange(vect.begin(), vect.end());
+	sp2.addNumber(vect.begin(), vect.end());
 	std::cout << sp2.shortestSpan() << std::endl;
 	std::cout << sp2.longestSpan() << std::endl;
 
@@ -75,7 +75,7 @@ int		main(void)
 	try
 	{
 		Span					sp4 = Span(0);
-		sp4.addNumberRange(vect.begin(), vect.end());
+		sp4.addNumber(vect.begin(), vect.end());
 	}
 	catch(const std::exception& e)
 	{
@@ -85,7 +85,7 @@ int		main(void)
 	try
 	{
 		Span					sp5 = Span(2);
-		sp5.addNumberRange(vect.end(), vect.end() - 2);
+		sp5.addNumber(vect.end(), vect.end() - 2);
 		std::cout << sp5.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)

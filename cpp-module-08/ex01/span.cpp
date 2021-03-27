@@ -37,7 +37,7 @@ void			Span::addNumber(int num)
 
 unsigned int	Span::shortestSpan(void)
 {
-	std::vector<int>			tmp = this->numbers;
+	std::vector<int>			tmp(this->numbers);
 	std::vector<int>::iterator	begin = tmp.begin();
 	unsigned int				span = -1;
 
