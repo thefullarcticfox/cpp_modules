@@ -54,6 +54,7 @@ public:
 	int				getprecision() const;
 
 	static int		isFloat(const std::string& str);
+	static char		getChar(const std::string& str);
 	static int		ft_stoi(const std::string& str);
 	static float	ft_stof(const std::string& str);
 	static double	ft_stod(const std::string& str);

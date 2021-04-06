@@ -58,15 +58,38 @@ int			Converter::isFloat(const std::string& str)
 	return (0);
 }
 
+char		Converter::getChar(const std::string& str)
+{
+	if (str.size() == 1)
+		return (str.at(0));
+
+	const std::string	escapes[] = {
+		"\\a", "\\b", "\\e", "\\f", "\\n", "\\r",
+		"\\t", "\\v", "\\\\", "\\\'", "\\\"", "\\?"
+	};
+	const char			literals[] = {
+		'\a', '\b', '\e', '\f', '\n', '\r',
+		'\t', '\v', '\\', '\'', '\"', '\?'
+	};
+
+	for (uint i = 0; i < 12; i++) {
+		if (str == escapes[i])
+			return (literals[i]);
+	}
+
+	return (str.at(1));
+}
+
 Converter::Converter(const std::string& value)
 {
 	this->actualtype = 0;
 
-	if (value.length() == 1 && !isdigit(value[0]))
+	if ((value.size() == 1 && !isdigit(value.at(0))) ||
+		(value.size() == 2 && value.at(0) == '\\'))
 		this->actualtype = 1;
 	else if ((isdigit(value[0]) &&
 		value.find_first_not_of("0123456789") == std::string::npos) ||
-		((value[0] == '-' || value[0] == '+') && value.length() > 1 &&
+		((value.at(0) == '-' || value.at(0) == '+') && value.size() > 1 &&
 		value.substr(1).find_first_not_of("0123456789") == std::string::npos))
 		this->actualtype = 2;
 	else	//	check floats
@@ -80,10 +103,8 @@ Converter::Converter(const std::string& value)
 
 	try
 	{
-		if (value.length() == 0)
-			this->charvalue = '\0';
-		else if (this->actualtype == 1)
-			this->charvalue = value[0];
+		if (this->actualtype == 1)
+			this->charvalue = Converter::getChar(value);
 		else if (this->actualtype == 2)
 			this->intvalue = Converter::ft_stoi(value);
 		else if (this->actualtype == 3)
