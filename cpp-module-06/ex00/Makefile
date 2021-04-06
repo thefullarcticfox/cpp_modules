@@ -4,7 +4,7 @@ OBJ = $(SRC:.cpp=.o)
 INCLUDEDIR = ./
 HEADERS = $(INCLUDEDIR)Converter.hpp
 CC = clang++
-CFLAGS = -g -Wall -Wextra -Werror -I$(INCLUDEDIR) -std=c++98
+CFLAGS = -Wall -Wextra -Werror -I$(INCLUDEDIR) -std=c++98
 EXECFLAGS = $(CFLAGS)
 
 .PHONY: all bonus clean fclean re

@@ -4,6 +4,13 @@ Converter::Converter() {}
 
 int			Converter::isFloat(const std::string& str)
 {
+	if (str == "nanf" || str == "-nanf" || str == "+nanf" ||
+		str == "inff" || str == "-inff" || str == "+inff")
+		return (1);
+	if (str == "nan" || str == "-nan" || str == "+nan" ||
+		str == "inf" || str == "-inf" || str == "+inf")
+		return (2);
+
 	std::string::const_iterator	it = str.begin();
 
 	if (str.find_first_of(".eE") == std::string::npos)
@@ -53,6 +60,8 @@ int			Converter::isFloat(const std::string& str)
 
 Converter::Converter(const std::string& value)
 {
+	this->actualtype = 0;
+
 	if (value.length() == 0 || (value.length() == 1 && !isdigit(value[0])))
 		this->actualtype = 1;
 	else if ((isdigit(value[0]) &&
@@ -60,14 +69,15 @@ Converter::Converter(const std::string& value)
 		((value[0] == '-' || value[0] == '+') && value.length() > 1 &&
 		value.substr(1).find_first_not_of("0123456789") == std::string::npos))
 		this->actualtype = 2;
-	else if (value == "nanf" || value == "inff" ||
-			value == "-inff" || value == "+inff" || isFloat(value) == 1)
-		this->actualtype = 3;
-	else if (value == "nan" || value == "inf" ||
-			value == "-inf" || value == "+inf" || isFloat(value) == 2)
-		this->actualtype = 4;
-	else
-		this->actualtype = 0;
+	else	//	check floats
+	{
+		int res = isFloat(value);
+		if (res == 1)
+			this->actualtype = 3;
+		if (res == 2)
+			this->actualtype = 4;
+	}
+
 	try
 	{
 		if (value.length() == 0)
@@ -326,7 +336,9 @@ int					Converter::ft_stoi(const std::string& str)
 
 float				Converter::ft_stof(const std::string& str)
 {
-	if (str == "nan" || str == "nanf")
+	if (str == "-nan" || str == "-nanf")
+		return (-std::numeric_limits<float>::quiet_NaN());
+	if (str == "nan" || str == "nanf" || str == "+nan" || str == "+nanf")
 		return (std::numeric_limits<float>::quiet_NaN());
 	if (str == "-inff" || str == "-inf")
 		return (-std::numeric_limits<float>::infinity());
@@ -347,7 +359,9 @@ float				Converter::ft_stof(const std::string& str)
 
 double				Converter::ft_stod(const std::string& str)
 {
-	if (str == "nan" || str == "nanf")
+	if (str == "-nan" || str == "-nanf")
+		return (-std::numeric_limits<double>::quiet_NaN());
+	if (str == "nan" || str == "nanf" || str == "+nan" || str == "+nanf")
 		return (std::numeric_limits<double>::quiet_NaN());
 	if (str == "-inff" || str == "-inf")
 		return (-std::numeric_limits<double>::infinity());
