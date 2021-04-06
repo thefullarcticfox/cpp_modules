@@ -77,6 +77,43 @@ char		Converter::getChar(const std::string& str)
 			return (literals[i]);
 	}
 
+	if (str.at(1) == 'x')
+	{
+		std::string	tmp = str.substr(2);
+		for (size_t i = 0; i < tmp.size(); i++)
+			tmp.at(i) = tolower(tmp.at(i));
+		if (tmp.size() < 2 ||
+			tmp.find_first_not_of("0123456789abcdef") != std::string::npos)
+			throw std::invalid_argument("getChar: invalid hex escape sequence");
+		unsigned short	res = 0;
+		for (size_t i = 0; i < tmp.size(); i++)
+		{
+			res *= 16;
+			if (isdigit(tmp.at(i)))
+				res += tmp.at(i) - '0';
+			else
+				res += tmp.at(i) - 'a' + 10;
+		}
+		if (res > 255)
+			throw std::out_of_range("getChar: hex escape sequence is greater than 127");
+		return (static_cast<char>(res));
+	}
+	else if (isdigit(str.at(1)))
+	{
+		std::string	tmp = str.substr(1);
+		if (tmp.find_first_not_of("01234567") != std::string::npos)
+			throw std::invalid_argument("getChar: invalid octal escape sequence");
+		unsigned short	res = 0;
+		for (size_t i = 0; i < tmp.size(); i++)
+		{
+			res *= 8;
+			res += tmp.at(i) - '0';
+		}
+		if (res > 255)
+			throw std::out_of_range("getChar: octal escape sequence is greater than 127");
+		return (static_cast<char>(res));
+	}
+
 	return (str.at(1));
 }
 
@@ -85,7 +122,7 @@ Converter::Converter(const std::string& value)
 	this->actualtype = 0;
 
 	if ((value.size() == 1 && !isdigit(value.at(0))) ||
-		(value.size() == 2 && value.at(0) == '\\'))
+		(value.size() >= 2 && value.size() <= 4 && value.at(0) == '\\'))
 		this->actualtype = 1;
 	else if ((isdigit(value[0]) &&
 		value.find_first_not_of("0123456789") == std::string::npos) ||
