@@ -62,7 +62,7 @@ Converter::Converter(const std::string& value)
 {
 	this->actualtype = 0;
 
-	if (value.length() == 0 || (value.length() == 1 && !isdigit(value[0])))
+	if (value.length() == 1 && !isdigit(value[0]))
 		this->actualtype = 1;
 	else if ((isdigit(value[0]) &&
 		value.find_first_not_of("0123456789") == std::string::npos) ||
