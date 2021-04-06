@@ -8,13 +8,10 @@ int			Converter::isFloat(const std::string& str)
 
 	if (str.find_first_of(".eE") == std::string::npos)
 		return (0);
-	if (it == str.end() && (*it == '-' || *it == '+'))
-	{
+	if (it != str.end() && (*it == '-' || *it == '+'))
 		++it;
-		if (it == str.end() || !isdigit(*++it))
-			return (0);
-	}
-	if (it == str.end() || !isdigit(*it))
+
+	if (it == str.end() || (*it != '.' && !isdigit(*it)))
 		return (0);
 
 	while (it != str.end() && isdigit(*it))
@@ -191,8 +188,8 @@ float			Converter::getFloat(void) const
 		if (doublevalue != 0.0 &&
 			doublevalue != std::numeric_limits<float>::infinity() &&
 			doublevalue != -std::numeric_limits<float>::infinity() &&
-			(doublevalue < std::numeric_limits<float>::min() ||
-			doublevalue > std::numeric_limits<float>::max()))
+			(fabs(doublevalue) < std::numeric_limits<float>::min() ||
+			fabs(doublevalue) > std::numeric_limits<float>::max()))
 			throw (Converter::ImpossibleException());
 		return (static_cast<float>(doublevalue));
 	}
