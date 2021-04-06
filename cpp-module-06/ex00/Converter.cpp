@@ -326,6 +326,13 @@ int					Converter::ft_stoi(const std::string& str)
 
 float				Converter::ft_stof(const std::string& str)
 {
+	if (str == "nan" || str == "nanf")
+		return (std::numeric_limits<float>::quiet_NaN());
+	if (str == "-inff" || str == "-inf")
+		return (-std::numeric_limits<float>::infinity());
+	if (str == "+inff" || str == "inff" || str == "+inf" || str == "inf")
+		return (std::numeric_limits<float>::infinity());
+
 	std::stringstream	iss;
 	if (str.size() > 0 && str.at(str.size() - 1) == 'f')
 		iss << str.substr(0, str.size() - 1);
@@ -340,6 +347,13 @@ float				Converter::ft_stof(const std::string& str)
 
 double				Converter::ft_stod(const std::string& str)
 {
+	if (str == "nan" || str == "nanf")
+		return (std::numeric_limits<double>::quiet_NaN());
+	if (str == "-inff" || str == "-inf")
+		return (-std::numeric_limits<double>::infinity());
+	if (str == "+inff" || str == "inff" || str == "+inf" || str == "inf")
+		return (std::numeric_limits<double>::infinity());
+
 	std::istringstream	iss(str);
 	double				val = 0;
 
