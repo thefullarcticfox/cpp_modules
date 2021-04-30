@@ -1,6 +1,8 @@
 *.o
 *.a
 *a.out*
+*_shrubbery
+.vscode
 cpp-module-00/ex00/megaphone
 cpp-module-00/ex01/phonebook
 cpp-module-01/ex07/replace
@@ -11,4 +13,3 @@ cpp-module-06/ex02/identify
 cpp-module-07/ex00/whatever
 cpp-module-07/ex01/iter
 cpp-module-07/ex02/array
-.vscode
