@@ -312,7 +312,7 @@ std::ostream&	operator<<(std::ostream& os, const Converter& val)
 		if (val.getFloat() != std::numeric_limits<float>::quiet_NaN() &&
 			val.getFloat() != std::numeric_limits<float>::infinity() &&
 			val.getFloat() != -std::numeric_limits<float>::infinity() &&
-			val.getFloat() == floorf(val.getFloat()))
+			val.getFloat() == truncf(val.getFloat()))
 			os << std::fixed << std::setprecision(1);
 		else if (val.getprecision() > 0)
 			os << std::fixed << std::setprecision(val.getprecision());
