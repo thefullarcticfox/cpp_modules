@@ -2,7 +2,7 @@ NAME = array
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 INCLUDEDIR = ./
-INCLUDES = $(INCLUDEDIR)Array.tpp
+INCLUDES = $(INCLUDEDIR)Array.ipp
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -I$(INCLUDEDIR) -std=c++98
 EXECFLAGS = $(CFLAGS)

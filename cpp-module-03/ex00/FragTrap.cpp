@@ -1,8 +1,8 @@
 #include "FragTrap.hpp"
 
-std::string const	FragTrap::type = "FR4G-TP";
+const std::string	FragTrap::type = "FR4G-TP";
 
-std::string const	FragTrap::quotes[qcount] = {
+const std::string	FragTrap::quotes[qcount] = {
 	"Step right up, to the Bulletnator 9000!",
 	"I am a tornado of death and bullets!",
 	"Hehehehe, mwaa ha ha ha, MWAA HA HA HA!",

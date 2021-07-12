@@ -13,7 +13,7 @@ public:
 	Fixed(const Fixed& other);				// copy contructor
 	Fixed&	operator=(const Fixed& other);	// assignation operator overload
 	int					getRawBits(void) const;
-	void				setRawBits(int const raw);
+	void				setRawBits(const int raw);
 };
 
 #endif

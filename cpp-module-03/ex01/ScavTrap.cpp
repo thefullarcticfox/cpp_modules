@@ -1,8 +1,8 @@
 #include "ScavTrap.hpp"
 
-std::string const	ScavTrap::type = "SC4V-TP";
+const std::string	ScavTrap::type = "SC4V-TP";
 
-std::string const	ScavTrap::challenges[ScavTrap::ccount] = {
+const std::string	ScavTrap::challenges[ScavTrap::ccount] = {
 	"Stop me before I kill again, except don't!",
 	"DO A TRIPLE BACKFLIP!",
 	"Kill a badass enemy type",

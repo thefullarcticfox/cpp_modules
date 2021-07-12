@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-std::string const	FragTrap::quotes[FragTrap::qcount] = {
+const std::string	FragTrap::quotes[FragTrap::qcount] = {
 	"Step right up, to the Bulletnator 9000!",
 	"I am a tornado of death and bullets!",
 	"Hehehehe, mwaa ha ha ha, MWAA HA HA HA!",

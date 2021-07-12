@@ -2,7 +2,7 @@
 #include <exception>
 #include <ctime>
 #include <cstdlib>
-#include "Array.tpp"
+#include "Array.ipp"
 
 int		main(void)
 {

@@ -9,14 +9,14 @@ class Form;
 
 class Form {
 private:
-	std::string const	name;
+	const std::string	name;
 	bool				_issigned;
-	int const			signgrade;
-	int const			execgrade;
+	const int			signgrade;
+	const int			execgrade;
 	std::string 		target;
 	Form();
 public:
-	Form(const std::string& name, int signgrade, int const execgrade);
+	Form(const std::string& name, int signgrade, const int execgrade);
 	virtual ~Form();
 	Form(const Form& other);
 	Form&				operator=(const Form& other);

@@ -45,7 +45,7 @@ Form*		Intern::makeForm(const std::string& form,
 		"robotomy request",
 		"shrubbery creation"
 	};
-	Form		*(Intern::*forms[3])(const std::string& ) = {
+	Form*		(Intern::*forms[3])(const std::string&) = {
 		&Intern::makePresidentialPardon,
 		&Intern::makeRobotomyRequest,
 		&Intern::makeShrubberyCreation
